@@ -1,5 +1,6 @@
-flask 
-groq 
-python-dotenv 
-requests 
-gunicorn 
+flask
+groq
+python-dotenv
+requests
+gunicorn
+bcrypt
