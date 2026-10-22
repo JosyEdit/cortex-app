@@ -1,10 +1,4 @@
-﻿from flask import Flask
-app = Flask(__name__)
-
-@app.route('/test')
-def test():
-    return '<h1>Le serveur Render fonctionne !</h1>'
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """Cortex â€” interface locale (navigateur, 127.0.0.1 uniquement).
 
 Ce que c'est : une fenÃªtre sur le Cortex, pas un deuxiÃ¨me Cortex. Elle rÃ©utilise
@@ -3558,7 +3552,7 @@ def main():
     return 0
 
 
-if __name__ == "__main__":
+if True:
     sys.exit(main())
 
 @app.route("/github")
