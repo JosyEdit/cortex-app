@@ -3557,3 +3557,7 @@ def main():
 if __name__ == "__main__":
     sys.exit(main())
 
+
+@app.route('/test-live')
+def test_live():
+    return '<h1 style="color:green;">Le Cortex est en ligne sur Render !</h1>'
