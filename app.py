@@ -1,4 +1,14 @@
-﻿#!/usr/bin/env python3
+﻿from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return 'Cortex est en ligne !'
+
+@app.route('/login')
+def login():
+    return 'Page de connexion Cortex'
+#!/usr/bin/env python3
 """Cortex â€” interface locale (navigateur, 127.0.0.1 uniquement).
 
 Ce que c'est : une fenÃªtre sur le Cortex, pas un deuxiÃ¨me Cortex. Elle rÃ©utilise
@@ -3554,5 +3564,6 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
+
 
 
