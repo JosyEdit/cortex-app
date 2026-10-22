@@ -6,3 +6,7 @@ gunicorn
 bcrypt
 feedparser
 beautifulsoup4
+python-telegram-bot
+duckdb
+openpyxl
+pillow
