@@ -1,0 +1,37 @@
+# Le Cortex — dépendances complètes (PC local, Python 3.12). Versions vérifiées le 22/10/2026.
+# Installation : python -m pip install -r requirements.txt
+# Hébergement léger (Render…) : utiliser requirements-serveur.txt à la place.
+
+# Moteur, veille et emails
+feedparser==6.0.14
+requests==2.34.2
+python-dotenv==1.2.4
+ddgs==9.16.0
+tzdata==2026.5
+
+# Interface : connexion, lecture de sites, documents, données
+bcrypt==5.0.0
+beautifulsoup4==4.15.0
+playwright==1.64.0
+pypdf==6.21.2
+pdfplumber==0.11.10
+python-docx==1.2.0
+openpyxl==3.1.5
+pandas==2.3.3
+duckdb==2.0.0
+fpdf2==2.8.9
+icalendar==7.3.0
+yfinance==1.7.0
+
+# Copilote : vérification de code
+black==26.10.1
+pylint==4.1.3
+
+# Médias (lourds : PC local seulement)
+pillow==12.3.0
+moviepy==1.0.3
+rembg[cpu]==2.0.85
+
+# Module OSINT (facultatif, installé par install_osint.bat après accord)
+python-Wappalyzer==0.3.1
+sherlock-project==0.16.2

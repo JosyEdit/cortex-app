@@ -1,0 +1,24 @@
+﻿C:\Users\JOSY EI\cortex\AGENTS.md:219: veut que rien ne quitte son PC, le plan doit être produit par **Ollama**
+C:\Users\JOSY EI\cortex\AGENTS.md:220: (local, `LLM_PROVIDER=ollama`). Tu le lui dis si on te le demande, sans détour.
+C:\Users\JOSY EI\cortex\cortex.py:100: # ollama : local, gratuit, open source, données sur le PC ; les autres sont hébergés.
+C:\Users\JOSY EI\cortex\cortex.py:102: "ollama": {"url": "http://localhost:11434/api/chat", "model": "qwen2.5:3b",
+C:\Users\JOSY EI\cortex\cortex.py:128: LLM_CHAIN = [p for p in (_provider(os.environ.get("LLM_PROVIDER", "ollama"), primary=True),
+C:\Users\JOSY EI\cortex\cortex.py:138: _llm = LLM_CHAIN[0] if LLM_CHAIN else dict(LLM_PROVIDERS["ollama"], name="aucun", key="")
+C:\Users\JOSY EI\cortex\cortex.py:472: # EXÉCUTIF — modèle de langage (Ollama local, Groq, Mistral...)
+C:\Users\JOSY EI\cortex\cortex.py:506: if name == "ollama":
+C:\Users\JOSY EI\cortex\cortex.py:550: content = (data["message"]["content"] if name == "ollama"
+C:\Users\JOSY EI\cortex\cortex.py:1592: f"{p['model']} via {p['name']}" + (" (local, sur ton PC)" if p["name"] == "ollama" else "")
+C:\Users\JOSY EI\cortex\fondateur.py:597: local = all(f.get("name") == "ollama" for f in c.LLM_CHAIN)
+C:\Users\JOSY EI\cortex\fondateur.py:604: + "). Pour que rien ne quitte ton PC : <code>LLM_PROVIDER=ollama</code>.")
+C:\Users\JOSY EI\cortex\fondateur.py:1123: "ollama": {"url": "http://localhost:11434/api/chat", "model": "qwen2.5:3b",
+C:\Users\JOSY EI\cortex\fondateur.py:1147: """Principal (LLM_PROVIDER, sinon Groq si la clé existe, sinon Ollama), puis replis.
+C:\Users\JOSY EI\cortex\fondateur.py:1151: suivant), puis LLM_FALLBACK, puis Ollama local. Si tout échoue : aucune
+C:\Users\JOSY EI\cortex\fondateur.py:1158: principal = "groq" if os.environ.get("GROQ_API_KEY", "").strip() else "ollama"
+C:\Users\JOSY EI\cortex\fondateur.py:1168: if not any(p["name"] == "ollama" for p in chaine):
+C:\Users\JOSY EI\cortex\fondateur.py:1169: local = _fournisseur("ollama")  # dernier recours : sur le PC, donc gratuit et privé
+C:\Users\JOSY EI\cortex\fondateur.py:1176: """Appel au modèle, compatible OpenAI et Ollama, sans dépendance externe."""
+C:\Users\JOSY EI\cortex\fondateur.py:1197: if cfg["name"] == "ollama":
+C:\Users\JOSY EI\cortex\fondateur.py:1209: if donnees is None and json_mode and cfg["name"] != "ollama":
+C:\Users\JOSY EI\cortex\fondateur.py:1215: contenu = (donnees["message"]["content"] if cfg["name"] == "ollama"
+C:\Users\JOSY EI\cortex\fondateur.py:1308: or "aucun (aucune clé ni Ollama)"),
+C:\Users\JOSY EI\cortex\fondateur.py:1394: print("Aucun modèle configuré (GROQ_API_KEY, ou MISTRAL_API_KEY, ou Ollama local).")

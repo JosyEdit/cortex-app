@@ -1,0 +1,11 @@
+cortex.db
+cortex.db-journal
+__pycache__/
+.env
+cortex.log
+vie-fondateur.md
+.app-token
+cortex-app.log
+
+MOT-DE-PASSE-INITIAL.txt
+.aider*

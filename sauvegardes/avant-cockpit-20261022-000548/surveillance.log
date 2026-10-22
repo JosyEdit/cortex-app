@@ -1,0 +1,765 @@
+15/10 07:36:08  surveillance démarrée (lecteur toléré 120 s, contrôle toutes les 30 s)
+15/10 07:38:38  lecteur arrêté depuis 123 s -> relance
+15/10 07:38:38  relance de chat_daemon.py
+15/10 07:46:22  battement de cœur illisible (base occupée) : je ne touche à rien
+15/10 08:16:38  battement de cœur illisible (base occupée) : je ne touche à rien
+15/10 09:27:42  battement de cœur illisible (base occupée) : je ne touche à rien
+15/10 13:58:13  lecteur arrêté depuis 144 s -> relance
+15/10 13:58:13  relance de chat_daemon.py
+18/10 22:19:51  surveillance démarrée (lecteur toléré 120 s, contrôle toutes les 30 s)
+18/10 22:19:51  lecteur arrêté depuis 91329 s -> relance
+18/10 22:19:51  relance de chat_daemon.py
+18/10 22:20:05  interface muette -> relance
+18/10 22:20:06  relance de app.py
+19/10 02:59:44  lecteur arrêté depuis 135 s -> relance
+19/10 02:59:44  relance de chat_daemon.py
+19/10 08:59:53  lecteur arrêté depuis 140 s -> relance
+19/10 08:59:53  relance de chat_daemon.py
+21/10 11:37:40  lecteur arrêté depuis 121 s -> relance
+21/10 11:37:40  relance de chat_daemon.py
+21/10 11:39:40  lecteur arrêté depuis 241 s -> relance
+21/10 11:39:40  relance de chat_daemon.py
+21/10 11:41:40  lecteur arrêté depuis 361 s -> relance
+21/10 11:41:40  relance de chat_daemon.py
+21/10 11:43:40  lecteur arrêté depuis 481 s -> relance
+21/10 11:43:40  relance de chat_daemon.py
+21/10 11:45:40  lecteur arrêté depuis 601 s -> relance
+21/10 11:45:40  relance de chat_daemon.py
+21/10 11:47:40  lecteur arrêté depuis 721 s -> relance
+21/10 11:47:40  relance de chat_daemon.py
+21/10 11:49:40  lecteur arrêté depuis 841 s -> relance
+21/10 11:49:40  relance de chat_daemon.py
+21/10 11:51:40  lecteur arrêté depuis 961 s -> relance
+21/10 11:51:40  relance de chat_daemon.py
+21/10 11:53:40  lecteur arrêté depuis 1081 s -> relance
+21/10 11:53:40  relance de chat_daemon.py
+21/10 11:55:40  lecteur arrêté depuis 1201 s -> relance
+21/10 11:55:40  relance de chat_daemon.py
+21/10 11:57:40  lecteur arrêté depuis 1321 s -> relance
+21/10 11:57:40  relance de chat_daemon.py
+21/10 11:59:41  lecteur arrêté depuis 1442 s -> relance
+21/10 11:59:41  relance de chat_daemon.py
+21/10 12:01:41  lecteur arrêté depuis 1562 s -> relance
+21/10 12:01:41  relance de chat_daemon.py
+21/10 12:03:41  lecteur arrêté depuis 1682 s -> relance
+21/10 12:03:41  relance de chat_daemon.py
+21/10 12:05:41  lecteur arrêté depuis 1802 s -> relance
+21/10 12:05:41  relance de chat_daemon.py
+21/10 12:07:41  lecteur arrêté depuis 1922 s -> relance
+21/10 12:07:41  relance de chat_daemon.py
+21/10 12:09:41  lecteur arrêté depuis 2042 s -> relance
+21/10 12:09:41  relance de chat_daemon.py
+21/10 12:11:41  lecteur arrêté depuis 2162 s -> relance
+21/10 12:11:41  relance de chat_daemon.py
+21/10 12:13:41  lecteur arrêté depuis 2282 s -> relance
+21/10 12:13:41  relance de chat_daemon.py
+21/10 12:15:41  lecteur arrêté depuis 2402 s -> relance
+21/10 12:15:41  relance de chat_daemon.py
+21/10 12:17:41  lecteur arrêté depuis 2522 s -> relance
+21/10 12:17:41  relance de chat_daemon.py
+21/10 12:19:41  lecteur arrêté depuis 2642 s -> relance
+21/10 12:19:41  relance de chat_daemon.py
+21/10 12:21:41  lecteur arrêté depuis 2762 s -> relance
+21/10 12:21:41  relance de chat_daemon.py
+21/10 12:23:41  lecteur arrêté depuis 2882 s -> relance
+21/10 12:23:41  relance de chat_daemon.py
+21/10 12:25:41  lecteur arrêté depuis 3002 s -> relance
+21/10 12:25:41  relance de chat_daemon.py
+21/10 12:27:41  lecteur arrêté depuis 3122 s -> relance
+21/10 12:27:41  relance de chat_daemon.py
+21/10 12:29:41  lecteur arrêté depuis 3242 s -> relance
+21/10 12:29:41  relance de chat_daemon.py
+21/10 12:31:41  lecteur arrêté depuis 3362 s -> relance
+21/10 12:31:42  relance de chat_daemon.py
+21/10 12:33:42  lecteur arrêté depuis 3483 s -> relance
+21/10 12:33:42  relance de chat_daemon.py
+21/10 12:35:42  lecteur arrêté depuis 3603 s -> relance
+21/10 12:35:42  relance de chat_daemon.py
+21/10 12:37:42  lecteur arrêté depuis 3723 s -> relance
+21/10 12:37:42  relance de chat_daemon.py
+21/10 12:39:42  lecteur arrêté depuis 3843 s -> relance
+21/10 12:39:42  relance de chat_daemon.py
+21/10 12:41:42  lecteur arrêté depuis 3963 s -> relance
+21/10 12:41:42  relance de chat_daemon.py
+21/10 12:43:42  lecteur arrêté depuis 4083 s -> relance
+21/10 12:43:42  relance de chat_daemon.py
+21/10 12:45:42  lecteur arrêté depuis 4203 s -> relance
+21/10 12:45:42  relance de chat_daemon.py
+21/10 12:47:42  lecteur arrêté depuis 4323 s -> relance
+21/10 12:47:42  relance de chat_daemon.py
+21/10 12:49:42  lecteur arrêté depuis 4443 s -> relance
+21/10 12:49:42  relance de chat_daemon.py
+21/10 12:51:42  lecteur arrêté depuis 4563 s -> relance
+21/10 12:51:42  relance de chat_daemon.py
+21/10 12:53:42  lecteur arrêté depuis 4683 s -> relance
+21/10 12:53:42  relance de chat_daemon.py
+21/10 12:55:42  lecteur arrêté depuis 4803 s -> relance
+21/10 12:55:42  relance de chat_daemon.py
+21/10 12:57:43  lecteur arrêté depuis 4924 s -> relance
+21/10 12:57:43  relance de chat_daemon.py
+21/10 12:59:43  lecteur arrêté depuis 5044 s -> relance
+21/10 12:59:43  relance de chat_daemon.py
+21/10 13:01:43  lecteur arrêté depuis 5164 s -> relance
+21/10 13:01:43  relance de chat_daemon.py
+21/10 13:03:43  lecteur arrêté depuis 5284 s -> relance
+21/10 13:03:43  relance de chat_daemon.py
+21/10 13:05:43  lecteur arrêté depuis 5404 s -> relance
+21/10 13:05:43  relance de chat_daemon.py
+21/10 13:07:43  lecteur arrêté depuis 5524 s -> relance
+21/10 13:07:43  relance de chat_daemon.py
+21/10 13:09:43  lecteur arrêté depuis 5644 s -> relance
+21/10 13:09:43  relance de chat_daemon.py
+21/10 13:11:43  lecteur arrêté depuis 5764 s -> relance
+21/10 13:11:43  relance de chat_daemon.py
+21/10 13:13:43  lecteur arrêté depuis 5884 s -> relance
+21/10 13:13:43  relance de chat_daemon.py
+21/10 13:15:43  lecteur arrêté depuis 6004 s -> relance
+21/10 13:15:43  relance de chat_daemon.py
+21/10 13:17:43  lecteur arrêté depuis 6124 s -> relance
+21/10 13:17:43  relance de chat_daemon.py
+21/10 13:19:43  lecteur arrêté depuis 6244 s -> relance
+21/10 13:19:43  relance de chat_daemon.py
+21/10 13:21:43  lecteur arrêté depuis 6364 s -> relance
+21/10 13:21:43  relance de chat_daemon.py
+21/10 13:23:43  lecteur arrêté depuis 6484 s -> relance
+21/10 13:23:43  relance de chat_daemon.py
+21/10 13:25:43  lecteur arrêté depuis 6604 s -> relance
+21/10 13:25:43  relance de chat_daemon.py
+21/10 13:27:43  lecteur arrêté depuis 6724 s -> relance
+21/10 13:27:43  relance de chat_daemon.py
+21/10 13:29:43  lecteur arrêté depuis 6844 s -> relance
+21/10 13:29:44  relance de chat_daemon.py
+21/10 13:31:44  lecteur arrêté depuis 6965 s -> relance
+21/10 13:31:44  relance de chat_daemon.py
+21/10 13:33:44  lecteur arrêté depuis 7085 s -> relance
+21/10 13:33:44  relance de chat_daemon.py
+21/10 13:35:44  lecteur arrêté depuis 7205 s -> relance
+21/10 13:35:44  relance de chat_daemon.py
+21/10 13:37:44  lecteur arrêté depuis 7325 s -> relance
+21/10 13:37:44  relance de chat_daemon.py
+21/10 13:39:44  lecteur arrêté depuis 7445 s -> relance
+21/10 13:39:44  relance de chat_daemon.py
+21/10 13:41:44  lecteur arrêté depuis 7565 s -> relance
+21/10 13:41:44  relance de chat_daemon.py
+21/10 13:43:44  lecteur arrêté depuis 7685 s -> relance
+21/10 13:43:44  relance de chat_daemon.py
+21/10 13:45:44  lecteur arrêté depuis 7805 s -> relance
+21/10 13:45:44  relance de chat_daemon.py
+21/10 13:47:44  lecteur arrêté depuis 7925 s -> relance
+21/10 13:47:44  relance de chat_daemon.py
+21/10 13:49:44  lecteur arrêté depuis 8045 s -> relance
+21/10 13:49:44  relance de chat_daemon.py
+21/10 13:51:44  lecteur arrêté depuis 8165 s -> relance
+21/10 13:51:44  relance de chat_daemon.py
+21/10 13:53:44  lecteur arrêté depuis 8285 s -> relance
+21/10 13:53:44  relance de chat_daemon.py
+21/10 13:55:44  lecteur arrêté depuis 8405 s -> relance
+21/10 13:55:44  relance de chat_daemon.py
+21/10 13:57:44  lecteur arrêté depuis 8525 s -> relance
+21/10 13:57:44  relance de chat_daemon.py
+21/10 13:59:44  lecteur arrêté depuis 8645 s -> relance
+21/10 13:59:44  relance de chat_daemon.py
+21/10 14:01:45  lecteur arrêté depuis 8766 s -> relance
+21/10 14:01:45  relance de chat_daemon.py
+21/10 14:03:45  lecteur arrêté depuis 8886 s -> relance
+21/10 14:03:45  relance de chat_daemon.py
+21/10 14:05:45  lecteur arrêté depuis 9006 s -> relance
+21/10 14:05:45  relance de chat_daemon.py
+21/10 14:07:45  lecteur arrêté depuis 9126 s -> relance
+21/10 14:07:45  relance de chat_daemon.py
+21/10 14:09:45  lecteur arrêté depuis 9246 s -> relance
+21/10 14:09:45  relance de chat_daemon.py
+21/10 14:11:45  lecteur arrêté depuis 9366 s -> relance
+21/10 14:11:45  relance de chat_daemon.py
+21/10 14:13:45  lecteur arrêté depuis 9486 s -> relance
+21/10 14:13:45  relance de chat_daemon.py
+21/10 14:15:45  lecteur arrêté depuis 9606 s -> relance
+21/10 14:15:45  relance de chat_daemon.py
+21/10 14:17:46  lecteur arrêté depuis 9727 s -> relance
+21/10 14:17:46  relance de chat_daemon.py
+21/10 14:19:46  lecteur arrêté depuis 9847 s -> relance
+21/10 14:19:46  relance de chat_daemon.py
+21/10 14:21:46  lecteur arrêté depuis 9967 s -> relance
+21/10 14:21:46  relance de chat_daemon.py
+21/10 14:23:46  lecteur arrêté depuis 10087 s -> relance
+21/10 14:23:46  relance de chat_daemon.py
+21/10 14:25:46  lecteur arrêté depuis 10207 s -> relance
+21/10 14:25:47  relance de chat_daemon.py
+21/10 14:27:47  lecteur arrêté depuis 10328 s -> relance
+21/10 14:27:47  relance de chat_daemon.py
+21/10 14:29:47  lecteur arrêté depuis 10448 s -> relance
+21/10 14:29:47  relance de chat_daemon.py
+21/10 14:31:47  lecteur arrêté depuis 10568 s -> relance
+21/10 14:31:47  relance de chat_daemon.py
+21/10 14:33:47  lecteur arrêté depuis 10688 s -> relance
+21/10 14:33:47  relance de chat_daemon.py
+21/10 14:35:47  lecteur arrêté depuis 10808 s -> relance
+21/10 14:35:47  relance de chat_daemon.py
+21/10 14:37:47  lecteur arrêté depuis 10928 s -> relance
+21/10 14:37:47  relance de chat_daemon.py
+21/10 14:39:47  lecteur arrêté depuis 11048 s -> relance
+21/10 14:39:47  relance de chat_daemon.py
+21/10 14:41:47  lecteur arrêté depuis 11168 s -> relance
+21/10 14:41:47  relance de chat_daemon.py
+21/10 14:43:47  lecteur arrêté depuis 11288 s -> relance
+21/10 14:43:47  relance de chat_daemon.py
+21/10 14:45:47  lecteur arrêté depuis 11408 s -> relance
+21/10 14:45:47  relance de chat_daemon.py
+21/10 14:47:47  lecteur arrêté depuis 11528 s -> relance
+21/10 14:47:47  relance de chat_daemon.py
+21/10 14:49:47  lecteur arrêté depuis 11648 s -> relance
+21/10 14:49:47  relance de chat_daemon.py
+21/10 14:51:47  lecteur arrêté depuis 11768 s -> relance
+21/10 14:51:47  relance de chat_daemon.py
+21/10 14:53:47  lecteur arrêté depuis 11888 s -> relance
+21/10 14:53:47  relance de chat_daemon.py
+21/10 14:55:47  lecteur arrêté depuis 12008 s -> relance
+21/10 14:55:47  relance de chat_daemon.py
+21/10 14:57:47  lecteur arrêté depuis 12128 s -> relance
+21/10 14:57:48  relance de chat_daemon.py
+21/10 14:59:48  lecteur arrêté depuis 12249 s -> relance
+21/10 14:59:48  relance de chat_daemon.py
+21/10 15:01:48  lecteur arrêté depuis 12369 s -> relance
+21/10 15:01:48  relance de chat_daemon.py
+21/10 15:03:48  lecteur arrêté depuis 12489 s -> relance
+21/10 15:03:48  relance de chat_daemon.py
+21/10 15:05:48  lecteur arrêté depuis 12609 s -> relance
+21/10 15:05:48  relance de chat_daemon.py
+21/10 15:07:48  lecteur arrêté depuis 12729 s -> relance
+21/10 15:07:48  relance de chat_daemon.py
+21/10 15:09:48  lecteur arrêté depuis 12849 s -> relance
+21/10 15:09:48  relance de chat_daemon.py
+21/10 15:11:48  lecteur arrêté depuis 12969 s -> relance
+21/10 15:11:48  relance de chat_daemon.py
+21/10 15:13:48  lecteur arrêté depuis 13089 s -> relance
+21/10 15:13:48  relance de chat_daemon.py
+21/10 15:15:48  lecteur arrêté depuis 13209 s -> relance
+21/10 15:15:48  relance de chat_daemon.py
+21/10 15:17:48  lecteur arrêté depuis 13329 s -> relance
+21/10 15:17:48  relance de chat_daemon.py
+21/10 15:19:48  lecteur arrêté depuis 13449 s -> relance
+21/10 15:19:48  relance de chat_daemon.py
+21/10 15:21:48  lecteur arrêté depuis 13569 s -> relance
+21/10 15:21:48  relance de chat_daemon.py
+21/10 15:23:48  lecteur arrêté depuis 13689 s -> relance
+21/10 15:23:48  relance de chat_daemon.py
+21/10 15:25:48  lecteur arrêté depuis 13809 s -> relance
+21/10 15:25:48  relance de chat_daemon.py
+21/10 15:27:48  lecteur arrêté depuis 13929 s -> relance
+21/10 15:27:49  relance de chat_daemon.py
+21/10 15:29:49  lecteur arrêté depuis 14050 s -> relance
+21/10 15:29:49  relance de chat_daemon.py
+21/10 15:31:49  lecteur arrêté depuis 14170 s -> relance
+21/10 15:31:49  relance de chat_daemon.py
+21/10 15:33:49  lecteur arrêté depuis 14290 s -> relance
+21/10 15:33:49  relance de chat_daemon.py
+21/10 15:35:49  lecteur arrêté depuis 14410 s -> relance
+21/10 15:35:49  relance de chat_daemon.py
+21/10 15:37:49  lecteur arrêté depuis 14530 s -> relance
+21/10 15:37:49  relance de chat_daemon.py
+21/10 15:39:49  lecteur arrêté depuis 14650 s -> relance
+21/10 15:39:49  relance de chat_daemon.py
+21/10 15:41:49  lecteur arrêté depuis 14770 s -> relance
+21/10 15:41:49  relance de chat_daemon.py
+21/10 15:43:49  lecteur arrêté depuis 14890 s -> relance
+21/10 15:43:49  relance de chat_daemon.py
+21/10 15:45:49  lecteur arrêté depuis 15010 s -> relance
+21/10 15:45:49  relance de chat_daemon.py
+21/10 15:47:49  lecteur arrêté depuis 15130 s -> relance
+21/10 15:47:49  relance de chat_daemon.py
+21/10 15:49:49  lecteur arrêté depuis 15250 s -> relance
+21/10 15:49:49  relance de chat_daemon.py
+21/10 15:51:50  lecteur arrêté depuis 15371 s -> relance
+21/10 15:51:50  relance de chat_daemon.py
+21/10 15:53:50  lecteur arrêté depuis 15491 s -> relance
+21/10 15:53:50  relance de chat_daemon.py
+21/10 15:55:50  lecteur arrêté depuis 15611 s -> relance
+21/10 15:55:50  relance de chat_daemon.py
+21/10 15:57:50  lecteur arrêté depuis 15731 s -> relance
+21/10 15:57:50  relance de chat_daemon.py
+21/10 15:59:50  lecteur arrêté depuis 15851 s -> relance
+21/10 15:59:50  relance de chat_daemon.py
+21/10 16:01:50  lecteur arrêté depuis 15971 s -> relance
+21/10 16:01:50  relance de chat_daemon.py
+21/10 16:03:50  lecteur arrêté depuis 16091 s -> relance
+21/10 16:03:50  relance de chat_daemon.py
+21/10 16:05:50  lecteur arrêté depuis 16211 s -> relance
+21/10 16:05:50  relance de chat_daemon.py
+21/10 16:07:50  lecteur arrêté depuis 16331 s -> relance
+21/10 16:07:50  relance de chat_daemon.py
+21/10 16:09:50  lecteur arrêté depuis 16451 s -> relance
+21/10 16:09:50  relance de chat_daemon.py
+21/10 16:11:50  lecteur arrêté depuis 16571 s -> relance
+21/10 16:11:50  relance de chat_daemon.py
+21/10 16:13:50  lecteur arrêté depuis 16691 s -> relance
+21/10 16:13:50  relance de chat_daemon.py
+21/10 16:15:50  lecteur arrêté depuis 16811 s -> relance
+21/10 16:15:51  relance de chat_daemon.py
+21/10 16:17:51  lecteur arrêté depuis 16932 s -> relance
+21/10 16:17:51  relance de chat_daemon.py
+21/10 16:19:51  lecteur arrêté depuis 17052 s -> relance
+21/10 16:19:51  relance de chat_daemon.py
+21/10 16:21:51  lecteur arrêté depuis 17172 s -> relance
+21/10 16:21:51  relance de chat_daemon.py
+21/10 16:23:51  lecteur arrêté depuis 17292 s -> relance
+21/10 16:23:51  relance de chat_daemon.py
+21/10 16:25:51  lecteur arrêté depuis 17412 s -> relance
+21/10 16:25:51  relance de chat_daemon.py
+21/10 16:27:51  lecteur arrêté depuis 17532 s -> relance
+21/10 16:27:51  relance de chat_daemon.py
+21/10 16:29:51  lecteur arrêté depuis 17652 s -> relance
+21/10 16:29:51  relance de chat_daemon.py
+21/10 16:31:51  lecteur arrêté depuis 17772 s -> relance
+21/10 16:31:51  relance de chat_daemon.py
+21/10 16:33:51  lecteur arrêté depuis 17892 s -> relance
+21/10 16:33:51  relance de chat_daemon.py
+21/10 16:35:51  lecteur arrêté depuis 18012 s -> relance
+21/10 16:35:51  relance de chat_daemon.py
+21/10 16:37:51  lecteur arrêté depuis 18132 s -> relance
+21/10 16:37:51  relance de chat_daemon.py
+21/10 16:39:51  lecteur arrêté depuis 18252 s -> relance
+21/10 16:39:51  relance de chat_daemon.py
+21/10 16:41:51  lecteur arrêté depuis 18372 s -> relance
+21/10 16:41:51  relance de chat_daemon.py
+21/10 16:43:51  lecteur arrêté depuis 18492 s -> relance
+21/10 16:43:52  relance de chat_daemon.py
+21/10 16:45:52  lecteur arrêté depuis 18613 s -> relance
+21/10 16:45:52  relance de chat_daemon.py
+21/10 16:47:52  lecteur arrêté depuis 18733 s -> relance
+21/10 16:47:52  relance de chat_daemon.py
+21/10 16:49:52  lecteur arrêté depuis 18853 s -> relance
+21/10 16:49:52  relance de chat_daemon.py
+21/10 16:51:52  lecteur arrêté depuis 18973 s -> relance
+21/10 16:51:52  relance de chat_daemon.py
+21/10 16:53:52  lecteur arrêté depuis 19093 s -> relance
+21/10 16:53:52  relance de chat_daemon.py
+21/10 16:55:52  lecteur arrêté depuis 19213 s -> relance
+21/10 16:55:52  relance de chat_daemon.py
+21/10 16:57:52  lecteur arrêté depuis 19333 s -> relance
+21/10 16:57:52  relance de chat_daemon.py
+21/10 16:59:52  lecteur arrêté depuis 19453 s -> relance
+21/10 16:59:52  relance de chat_daemon.py
+21/10 17:01:52  lecteur arrêté depuis 19573 s -> relance
+21/10 17:01:52  relance de chat_daemon.py
+21/10 17:03:52  lecteur arrêté depuis 19693 s -> relance
+21/10 17:03:52  relance de chat_daemon.py
+21/10 17:05:52  lecteur arrêté depuis 19813 s -> relance
+21/10 17:05:52  relance de chat_daemon.py
+21/10 17:07:52  lecteur arrêté depuis 19933 s -> relance
+21/10 17:07:52  relance de chat_daemon.py
+21/10 17:09:52  lecteur arrêté depuis 20053 s -> relance
+21/10 17:09:52  relance de chat_daemon.py
+21/10 17:11:52  lecteur arrêté depuis 20173 s -> relance
+21/10 17:11:52  relance de chat_daemon.py
+21/10 17:13:52  lecteur arrêté depuis 20293 s -> relance
+21/10 17:13:52  relance de chat_daemon.py
+21/10 17:15:52  lecteur arrêté depuis 20413 s -> relance
+21/10 17:15:52  relance de chat_daemon.py
+21/10 17:17:52  lecteur arrêté depuis 20533 s -> relance
+21/10 17:17:53  relance de chat_daemon.py
+21/10 17:19:53  lecteur arrêté depuis 20654 s -> relance
+21/10 17:19:53  relance de chat_daemon.py
+21/10 17:21:53  lecteur arrêté depuis 20774 s -> relance
+21/10 17:21:53  relance de chat_daemon.py
+21/10 17:23:53  lecteur arrêté depuis 20894 s -> relance
+21/10 17:23:53  relance de chat_daemon.py
+21/10 17:25:53  lecteur arrêté depuis 21014 s -> relance
+21/10 17:25:53  relance de chat_daemon.py
+21/10 17:27:53  lecteur arrêté depuis 21134 s -> relance
+21/10 17:27:53  relance de chat_daemon.py
+21/10 17:29:53  lecteur arrêté depuis 21254 s -> relance
+21/10 17:29:53  relance de chat_daemon.py
+21/10 17:31:53  lecteur arrêté depuis 21374 s -> relance
+21/10 17:31:53  relance de chat_daemon.py
+21/10 17:33:53  lecteur arrêté depuis 21494 s -> relance
+21/10 17:33:53  relance de chat_daemon.py
+21/10 17:35:53  lecteur arrêté depuis 21614 s -> relance
+21/10 17:35:53  relance de chat_daemon.py
+21/10 17:37:53  lecteur arrêté depuis 21734 s -> relance
+21/10 17:37:53  relance de chat_daemon.py
+21/10 17:39:53  lecteur arrêté depuis 21854 s -> relance
+21/10 17:39:53  relance de chat_daemon.py
+21/10 17:41:53  lecteur arrêté depuis 21974 s -> relance
+21/10 17:41:53  relance de chat_daemon.py
+21/10 17:43:53  lecteur arrêté depuis 22094 s -> relance
+21/10 17:43:53  relance de chat_daemon.py
+21/10 17:45:53  lecteur arrêté depuis 22214 s -> relance
+21/10 17:45:53  relance de chat_daemon.py
+21/10 17:47:53  lecteur arrêté depuis 22334 s -> relance
+21/10 17:47:53  relance de chat_daemon.py
+21/10 17:49:53  lecteur arrêté depuis 22454 s -> relance
+21/10 17:49:53  relance de chat_daemon.py
+21/10 17:51:53  lecteur arrêté depuis 22574 s -> relance
+21/10 17:51:54  relance de chat_daemon.py
+21/10 17:53:54  lecteur arrêté depuis 22695 s -> relance
+21/10 17:53:54  relance de chat_daemon.py
+21/10 17:55:54  lecteur arrêté depuis 22815 s -> relance
+21/10 17:55:54  relance de chat_daemon.py
+21/10 17:57:54  lecteur arrêté depuis 22935 s -> relance
+21/10 17:57:54  relance de chat_daemon.py
+21/10 17:59:54  lecteur arrêté depuis 23055 s -> relance
+21/10 17:59:54  relance de chat_daemon.py
+21/10 18:01:54  lecteur arrêté depuis 23175 s -> relance
+21/10 18:01:54  relance de chat_daemon.py
+21/10 18:03:54  lecteur arrêté depuis 23295 s -> relance
+21/10 18:03:54  relance de chat_daemon.py
+21/10 18:05:54  lecteur arrêté depuis 23415 s -> relance
+21/10 18:05:54  relance de chat_daemon.py
+21/10 18:07:54  lecteur arrêté depuis 23535 s -> relance
+21/10 18:07:54  relance de chat_daemon.py
+21/10 18:09:54  lecteur arrêté depuis 23655 s -> relance
+21/10 18:09:54  relance de chat_daemon.py
+21/10 18:11:54  lecteur arrêté depuis 23775 s -> relance
+21/10 18:11:54  relance de chat_daemon.py
+21/10 18:13:54  lecteur arrêté depuis 23895 s -> relance
+21/10 18:13:54  relance de chat_daemon.py
+21/10 18:15:54  lecteur arrêté depuis 24015 s -> relance
+21/10 18:15:54  relance de chat_daemon.py
+21/10 18:17:54  lecteur arrêté depuis 24135 s -> relance
+21/10 18:17:54  relance de chat_daemon.py
+21/10 18:19:54  lecteur arrêté depuis 24255 s -> relance
+21/10 18:19:54  relance de chat_daemon.py
+21/10 18:21:54  lecteur arrêté depuis 24375 s -> relance
+21/10 18:21:54  relance de chat_daemon.py
+21/10 18:23:54  lecteur arrêté depuis 24495 s -> relance
+21/10 18:23:55  relance de chat_daemon.py
+21/10 18:25:55  lecteur arrêté depuis 24616 s -> relance
+21/10 18:25:55  relance de chat_daemon.py
+21/10 18:27:55  lecteur arrêté depuis 24736 s -> relance
+21/10 18:27:55  relance de chat_daemon.py
+21/10 18:29:55  lecteur arrêté depuis 24856 s -> relance
+21/10 18:29:55  relance de chat_daemon.py
+21/10 18:31:55  lecteur arrêté depuis 24976 s -> relance
+21/10 18:31:55  relance de chat_daemon.py
+21/10 18:33:55  lecteur arrêté depuis 25096 s -> relance
+21/10 18:33:55  relance de chat_daemon.py
+21/10 18:35:55  lecteur arrêté depuis 25216 s -> relance
+21/10 18:35:55  relance de chat_daemon.py
+21/10 18:37:55  lecteur arrêté depuis 25336 s -> relance
+21/10 18:37:55  relance de chat_daemon.py
+21/10 18:39:55  lecteur arrêté depuis 25456 s -> relance
+21/10 18:39:55  relance de chat_daemon.py
+21/10 18:41:55  lecteur arrêté depuis 25576 s -> relance
+21/10 18:41:55  relance de chat_daemon.py
+21/10 18:43:55  lecteur arrêté depuis 25696 s -> relance
+21/10 18:43:55  relance de chat_daemon.py
+21/10 18:45:55  lecteur arrêté depuis 25816 s -> relance
+21/10 18:45:55  relance de chat_daemon.py
+21/10 18:47:55  lecteur arrêté depuis 25936 s -> relance
+21/10 18:47:55  relance de chat_daemon.py
+21/10 18:49:55  lecteur arrêté depuis 26056 s -> relance
+21/10 18:49:55  relance de chat_daemon.py
+21/10 18:51:55  lecteur arrêté depuis 26176 s -> relance
+21/10 18:51:55  relance de chat_daemon.py
+21/10 18:53:55  lecteur arrêté depuis 26296 s -> relance
+21/10 18:53:55  relance de chat_daemon.py
+21/10 18:55:55  lecteur arrêté depuis 26416 s -> relance
+21/10 18:55:55  relance de chat_daemon.py
+21/10 18:57:55  lecteur arrêté depuis 26536 s -> relance
+21/10 18:57:55  relance de chat_daemon.py
+21/10 18:59:56  lecteur arrêté depuis 26657 s -> relance
+21/10 18:59:56  relance de chat_daemon.py
+21/10 19:01:56  lecteur arrêté depuis 26777 s -> relance
+21/10 19:01:56  relance de chat_daemon.py
+21/10 19:03:56  lecteur arrêté depuis 26897 s -> relance
+21/10 19:03:56  relance de chat_daemon.py
+21/10 19:05:56  lecteur arrêté depuis 27017 s -> relance
+21/10 19:05:56  relance de chat_daemon.py
+21/10 19:07:56  lecteur arrêté depuis 27137 s -> relance
+21/10 19:07:56  relance de chat_daemon.py
+21/10 19:09:56  lecteur arrêté depuis 27257 s -> relance
+21/10 19:09:56  relance de chat_daemon.py
+21/10 19:11:56  lecteur arrêté depuis 27377 s -> relance
+21/10 19:11:56  relance de chat_daemon.py
+21/10 19:13:56  lecteur arrêté depuis 27497 s -> relance
+21/10 19:13:56  relance de chat_daemon.py
+21/10 19:15:56  lecteur arrêté depuis 27617 s -> relance
+21/10 19:15:56  relance de chat_daemon.py
+21/10 19:17:56  lecteur arrêté depuis 27737 s -> relance
+21/10 19:17:56  relance de chat_daemon.py
+21/10 19:19:56  lecteur arrêté depuis 27857 s -> relance
+21/10 19:19:56  relance de chat_daemon.py
+21/10 19:21:56  lecteur arrêté depuis 27977 s -> relance
+21/10 19:21:56  relance de chat_daemon.py
+21/10 19:23:56  lecteur arrêté depuis 28097 s -> relance
+21/10 19:23:56  relance de chat_daemon.py
+21/10 19:25:56  lecteur arrêté depuis 28217 s -> relance
+21/10 19:25:56  relance de chat_daemon.py
+21/10 19:27:56  lecteur arrêté depuis 28337 s -> relance
+21/10 19:27:56  relance de chat_daemon.py
+21/10 19:29:56  lecteur arrêté depuis 28457 s -> relance
+21/10 19:29:56  relance de chat_daemon.py
+21/10 19:31:56  lecteur arrêté depuis 28577 s -> relance
+21/10 19:31:57  relance de chat_daemon.py
+21/10 19:33:57  lecteur arrêté depuis 28698 s -> relance
+21/10 19:33:57  relance de chat_daemon.py
+21/10 19:35:57  lecteur arrêté depuis 28818 s -> relance
+21/10 19:35:57  relance de chat_daemon.py
+21/10 19:37:57  lecteur arrêté depuis 28938 s -> relance
+21/10 19:37:57  relance de chat_daemon.py
+21/10 19:39:57  lecteur arrêté depuis 29058 s -> relance
+21/10 19:39:57  relance de chat_daemon.py
+21/10 19:41:57  lecteur arrêté depuis 29178 s -> relance
+21/10 19:41:57  relance de chat_daemon.py
+21/10 19:43:57  lecteur arrêté depuis 29298 s -> relance
+21/10 19:43:57  relance de chat_daemon.py
+21/10 19:45:57  lecteur arrêté depuis 29418 s -> relance
+21/10 19:45:57  relance de chat_daemon.py
+21/10 19:47:57  lecteur arrêté depuis 29538 s -> relance
+21/10 19:47:57  relance de chat_daemon.py
+21/10 19:49:57  lecteur arrêté depuis 29658 s -> relance
+21/10 19:49:57  relance de chat_daemon.py
+21/10 19:51:57  lecteur arrêté depuis 29778 s -> relance
+21/10 19:51:57  relance de chat_daemon.py
+21/10 19:53:57  lecteur arrêté depuis 29898 s -> relance
+21/10 19:53:57  relance de chat_daemon.py
+21/10 19:55:57  lecteur arrêté depuis 30018 s -> relance
+21/10 19:55:57  relance de chat_daemon.py
+21/10 19:57:57  lecteur arrêté depuis 30138 s -> relance
+21/10 19:57:57  relance de chat_daemon.py
+21/10 19:59:57  lecteur arrêté depuis 30258 s -> relance
+21/10 19:59:57  relance de chat_daemon.py
+21/10 20:01:57  lecteur arrêté depuis 30378 s -> relance
+21/10 20:01:57  relance de chat_daemon.py
+21/10 20:03:58  lecteur arrêté depuis 30499 s -> relance
+21/10 20:03:58  relance de chat_daemon.py
+21/10 20:05:58  lecteur arrêté depuis 30619 s -> relance
+21/10 20:05:58  relance de chat_daemon.py
+21/10 20:07:58  lecteur arrêté depuis 30739 s -> relance
+21/10 20:07:58  relance de chat_daemon.py
+21/10 20:09:58  lecteur arrêté depuis 30859 s -> relance
+21/10 20:09:58  relance de chat_daemon.py
+21/10 20:11:58  lecteur arrêté depuis 30979 s -> relance
+21/10 20:11:58  relance de chat_daemon.py
+21/10 20:13:58  lecteur arrêté depuis 31099 s -> relance
+21/10 20:13:58  relance de chat_daemon.py
+21/10 20:15:58  lecteur arrêté depuis 31219 s -> relance
+21/10 20:15:58  relance de chat_daemon.py
+21/10 20:17:58  lecteur arrêté depuis 31339 s -> relance
+21/10 20:17:58  relance de chat_daemon.py
+21/10 20:19:58  lecteur arrêté depuis 31459 s -> relance
+21/10 20:19:58  relance de chat_daemon.py
+21/10 20:21:58  lecteur arrêté depuis 31579 s -> relance
+21/10 20:21:58  relance de chat_daemon.py
+21/10 20:23:58  lecteur arrêté depuis 31699 s -> relance
+21/10 20:23:58  relance de chat_daemon.py
+21/10 20:25:58  lecteur arrêté depuis 31819 s -> relance
+21/10 20:25:58  relance de chat_daemon.py
+21/10 20:27:58  lecteur arrêté depuis 31939 s -> relance
+21/10 20:27:58  relance de chat_daemon.py
+21/10 20:29:58  lecteur arrêté depuis 32059 s -> relance
+21/10 20:29:58  relance de chat_daemon.py
+21/10 20:31:58  lecteur arrêté depuis 32179 s -> relance
+21/10 20:31:58  relance de chat_daemon.py
+21/10 20:33:58  lecteur arrêté depuis 32299 s -> relance
+21/10 20:33:58  relance de chat_daemon.py
+21/10 20:35:58  lecteur arrêté depuis 32419 s -> relance
+21/10 20:35:58  relance de chat_daemon.py
+21/10 20:37:58  lecteur arrêté depuis 32539 s -> relance
+21/10 20:37:59  relance de chat_daemon.py
+21/10 20:39:59  lecteur arrêté depuis 32660 s -> relance
+21/10 20:39:59  relance de chat_daemon.py
+21/10 20:41:59  lecteur arrêté depuis 32780 s -> relance
+21/10 20:41:59  relance de chat_daemon.py
+21/10 20:43:59  lecteur arrêté depuis 32900 s -> relance
+21/10 20:43:59  relance de chat_daemon.py
+21/10 20:45:59  lecteur arrêté depuis 33020 s -> relance
+21/10 20:45:59  relance de chat_daemon.py
+21/10 20:47:59  lecteur arrêté depuis 33140 s -> relance
+21/10 20:47:59  relance de chat_daemon.py
+21/10 20:49:59  lecteur arrêté depuis 33260 s -> relance
+21/10 20:49:59  relance de chat_daemon.py
+21/10 20:51:59  lecteur arrêté depuis 33380 s -> relance
+21/10 20:51:59  relance de chat_daemon.py
+21/10 20:53:59  lecteur arrêté depuis 33500 s -> relance
+21/10 20:53:59  relance de chat_daemon.py
+21/10 20:55:59  lecteur arrêté depuis 33620 s -> relance
+21/10 20:55:59  relance de chat_daemon.py
+21/10 20:57:59  lecteur arrêté depuis 33740 s -> relance
+21/10 20:57:59  relance de chat_daemon.py
+21/10 20:59:59  lecteur arrêté depuis 33860 s -> relance
+21/10 20:59:59  relance de chat_daemon.py
+21/10 21:01:59  lecteur arrêté depuis 33980 s -> relance
+21/10 21:01:59  relance de chat_daemon.py
+21/10 21:03:59  lecteur arrêté depuis 34100 s -> relance
+21/10 21:03:59  relance de chat_daemon.py
+21/10 21:05:59  lecteur arrêté depuis 34220 s -> relance
+21/10 21:05:59  relance de chat_daemon.py
+21/10 21:07:59  lecteur arrêté depuis 34340 s -> relance
+21/10 21:07:59  relance de chat_daemon.py
+21/10 21:09:59  lecteur arrêté depuis 34460 s -> relance
+21/10 21:09:59  relance de chat_daemon.py
+21/10 21:11:59  lecteur arrêté depuis 34580 s -> relance
+21/10 21:12:00  relance de chat_daemon.py
+21/10 21:14:00  lecteur arrêté depuis 34701 s -> relance
+21/10 21:14:00  relance de chat_daemon.py
+21/10 21:16:00  lecteur arrêté depuis 34821 s -> relance
+21/10 21:16:00  relance de chat_daemon.py
+21/10 21:18:00  lecteur arrêté depuis 34941 s -> relance
+21/10 21:18:00  relance de chat_daemon.py
+21/10 21:20:00  lecteur arrêté depuis 35061 s -> relance
+21/10 21:20:00  relance de chat_daemon.py
+21/10 21:22:00  lecteur arrêté depuis 35181 s -> relance
+21/10 21:22:00  relance de chat_daemon.py
+21/10 21:24:00  lecteur arrêté depuis 35301 s -> relance
+21/10 21:24:00  relance de chat_daemon.py
+21/10 21:26:00  lecteur arrêté depuis 35421 s -> relance
+21/10 21:26:00  relance de chat_daemon.py
+21/10 21:28:00  lecteur arrêté depuis 35541 s -> relance
+21/10 21:28:00  relance de chat_daemon.py
+21/10 21:30:00  lecteur arrêté depuis 35661 s -> relance
+21/10 21:30:00  relance de chat_daemon.py
+21/10 21:32:00  lecteur arrêté depuis 35781 s -> relance
+21/10 21:32:00  relance de chat_daemon.py
+21/10 21:34:00  lecteur arrêté depuis 35901 s -> relance
+21/10 21:34:00  relance de chat_daemon.py
+21/10 21:36:00  lecteur arrêté depuis 36021 s -> relance
+21/10 21:36:00  relance de chat_daemon.py
+21/10 21:38:00  lecteur arrêté depuis 36141 s -> relance
+21/10 21:38:00  relance de chat_daemon.py
+21/10 21:40:00  lecteur arrêté depuis 36261 s -> relance
+21/10 21:40:00  relance de chat_daemon.py
+21/10 21:42:00  lecteur arrêté depuis 36381 s -> relance
+21/10 21:42:00  relance de chat_daemon.py
+21/10 21:44:00  lecteur arrêté depuis 36501 s -> relance
+21/10 21:44:00  relance de chat_daemon.py
+21/10 21:46:01  lecteur arrêté depuis 36622 s -> relance
+21/10 21:46:01  relance de chat_daemon.py
+21/10 21:48:01  lecteur arrêté depuis 36742 s -> relance
+21/10 21:48:01  relance de chat_daemon.py
+21/10 21:50:01  lecteur arrêté depuis 36862 s -> relance
+21/10 21:50:01  relance de chat_daemon.py
+21/10 21:52:01  lecteur arrêté depuis 36982 s -> relance
+21/10 21:52:01  relance de chat_daemon.py
+21/10 21:54:01  lecteur arrêté depuis 37102 s -> relance
+21/10 21:54:01  relance de chat_daemon.py
+21/10 21:56:01  lecteur arrêté depuis 37222 s -> relance
+21/10 21:56:01  relance de chat_daemon.py
+21/10 21:58:01  lecteur arrêté depuis 37342 s -> relance
+21/10 21:58:01  relance de chat_daemon.py
+21/10 22:00:01  lecteur arrêté depuis 37462 s -> relance
+21/10 22:00:01  relance de chat_daemon.py
+21/10 22:02:01  lecteur arrêté depuis 37582 s -> relance
+21/10 22:02:01  relance de chat_daemon.py
+21/10 22:04:01  lecteur arrêté depuis 37702 s -> relance
+21/10 22:04:01  relance de chat_daemon.py
+21/10 22:06:01  lecteur arrêté depuis 37822 s -> relance
+21/10 22:06:01  relance de chat_daemon.py
+21/10 22:08:01  lecteur arrêté depuis 37942 s -> relance
+21/10 22:08:01  relance de chat_daemon.py
+21/10 22:10:01  lecteur arrêté depuis 38062 s -> relance
+21/10 22:10:01  relance de chat_daemon.py
+21/10 22:12:01  lecteur arrêté depuis 38182 s -> relance
+21/10 22:12:01  relance de chat_daemon.py
+21/10 22:14:01  lecteur arrêté depuis 38302 s -> relance
+21/10 22:14:01  relance de chat_daemon.py
+21/10 22:16:01  lecteur arrêté depuis 38422 s -> relance
+21/10 22:16:01  relance de chat_daemon.py
+21/10 22:18:02  lecteur arrêté depuis 38543 s -> relance
+21/10 22:18:02  relance de chat_daemon.py
+21/10 22:20:02  lecteur arrêté depuis 38663 s -> relance
+21/10 22:20:02  relance de chat_daemon.py
+21/10 22:22:02  lecteur arrêté depuis 38783 s -> relance
+21/10 22:22:02  relance de chat_daemon.py
+21/10 22:24:02  lecteur arrêté depuis 38903 s -> relance
+21/10 22:24:02  relance de chat_daemon.py
+21/10 22:26:02  lecteur arrêté depuis 39023 s -> relance
+21/10 22:26:02  relance de chat_daemon.py
+21/10 22:28:02  lecteur arrêté depuis 39143 s -> relance
+21/10 22:28:02  relance de chat_daemon.py
+21/10 22:30:02  lecteur arrêté depuis 39263 s -> relance
+21/10 22:30:02  relance de chat_daemon.py
+21/10 22:32:02  lecteur arrêté depuis 39383 s -> relance
+21/10 22:32:02  relance de chat_daemon.py
+21/10 22:34:02  lecteur arrêté depuis 39503 s -> relance
+21/10 22:34:02  relance de chat_daemon.py
+21/10 22:36:02  lecteur arrêté depuis 39623 s -> relance
+21/10 22:36:02  relance de chat_daemon.py
+21/10 22:38:02  lecteur arrêté depuis 39743 s -> relance
+21/10 22:38:02  relance de chat_daemon.py
+21/10 22:40:02  lecteur arrêté depuis 39863 s -> relance
+21/10 22:40:02  relance de chat_daemon.py
+21/10 22:42:02  lecteur arrêté depuis 39983 s -> relance
+21/10 22:42:02  relance de chat_daemon.py
+21/10 22:44:02  lecteur arrêté depuis 40103 s -> relance
+21/10 22:44:02  relance de chat_daemon.py
+21/10 22:46:02  lecteur arrêté depuis 40223 s -> relance
+21/10 22:46:02  relance de chat_daemon.py
+21/10 22:48:02  lecteur arrêté depuis 40343 s -> relance
+21/10 22:48:02  relance de chat_daemon.py
+21/10 22:50:03  lecteur arrêté depuis 40464 s -> relance
+21/10 22:50:03  relance de chat_daemon.py
+21/10 22:52:03  lecteur arrêté depuis 40584 s -> relance
+21/10 22:52:03  relance de chat_daemon.py
+21/10 22:54:03  lecteur arrêté depuis 40704 s -> relance
+21/10 22:54:03  relance de chat_daemon.py
+21/10 22:56:03  lecteur arrêté depuis 40824 s -> relance
+21/10 22:56:03  relance de chat_daemon.py
+21/10 22:58:03  lecteur arrêté depuis 40944 s -> relance
+21/10 22:58:03  relance de chat_daemon.py
+21/10 23:00:03  lecteur arrêté depuis 41064 s -> relance
+21/10 23:00:03  relance de chat_daemon.py
+21/10 23:02:03  lecteur arrêté depuis 41184 s -> relance
+21/10 23:02:03  relance de chat_daemon.py
+21/10 23:04:03  lecteur arrêté depuis 41304 s -> relance
+21/10 23:04:03  relance de chat_daemon.py
+21/10 23:06:03  lecteur arrêté depuis 41424 s -> relance
+21/10 23:06:03  relance de chat_daemon.py
+21/10 23:08:03  lecteur arrêté depuis 41544 s -> relance
+21/10 23:08:03  relance de chat_daemon.py
+21/10 23:10:03  lecteur arrêté depuis 41664 s -> relance
+21/10 23:10:03  relance de chat_daemon.py
+21/10 23:12:03  lecteur arrêté depuis 41784 s -> relance
+21/10 23:12:03  relance de chat_daemon.py
+21/10 23:14:03  lecteur arrêté depuis 41904 s -> relance
+21/10 23:14:03  relance de chat_daemon.py
+21/10 23:16:03  lecteur arrêté depuis 42024 s -> relance
+21/10 23:16:03  relance de chat_daemon.py
+21/10 23:18:03  lecteur arrêté depuis 42144 s -> relance
+21/10 23:18:04  relance de chat_daemon.py
+21/10 23:20:04  lecteur arrêté depuis 42265 s -> relance
+21/10 23:20:04  relance de chat_daemon.py
+21/10 23:22:04  lecteur arrêté depuis 42385 s -> relance
+21/10 23:22:04  relance de chat_daemon.py
+21/10 23:24:04  lecteur arrêté depuis 42505 s -> relance
+21/10 23:24:04  relance de chat_daemon.py
+21/10 23:26:04  lecteur arrêté depuis 42625 s -> relance
+21/10 23:26:04  relance de chat_daemon.py
+21/10 23:28:04  lecteur arrêté depuis 42745 s -> relance
+21/10 23:28:04  relance de chat_daemon.py
+21/10 23:30:04  lecteur arrêté depuis 42865 s -> relance
+21/10 23:30:04  relance de chat_daemon.py
+21/10 23:32:04  lecteur arrêté depuis 42985 s -> relance
+21/10 23:32:04  relance de chat_daemon.py
+21/10 23:34:04  lecteur arrêté depuis 43105 s -> relance
+21/10 23:34:04  relance de chat_daemon.py
+21/10 23:36:04  lecteur arrêté depuis 43225 s -> relance
+21/10 23:36:04  relance de chat_daemon.py
+21/10 23:38:04  lecteur arrêté depuis 43345 s -> relance
+21/10 23:38:04  relance de chat_daemon.py
+21/10 23:40:04  lecteur arrêté depuis 43465 s -> relance
+21/10 23:40:04  relance de chat_daemon.py
+21/10 23:42:04  lecteur arrêté depuis 43585 s -> relance
+21/10 23:42:04  relance de chat_daemon.py
+21/10 23:44:04  lecteur arrêté depuis 43705 s -> relance
+21/10 23:44:04  relance de chat_daemon.py
+21/10 23:46:05  lecteur arrêté depuis 43826 s -> relance
+21/10 23:46:05  relance de chat_daemon.py
+21/10 23:48:05  lecteur arrêté depuis 43946 s -> relance
+21/10 23:48:05  relance de chat_daemon.py
+21/10 23:50:05  lecteur arrêté depuis 44066 s -> relance
+21/10 23:50:05  relance de chat_daemon.py
+21/10 23:52:05  lecteur arrêté depuis 44186 s -> relance
+21/10 23:52:05  relance de chat_daemon.py
+21/10 23:54:05  lecteur arrêté depuis 44306 s -> relance
+21/10 23:54:05  relance de chat_daemon.py
+21/10 23:56:05  lecteur arrêté depuis 44426 s -> relance
+21/10 23:56:05  relance de chat_daemon.py
+21/10 23:58:05  lecteur arrêté depuis 44546 s -> relance
+21/10 23:58:05  relance de chat_daemon.py
+22/10 00:00:05  lecteur arrêté depuis 44666 s -> relance
+22/10 00:00:05  relance de chat_daemon.py
+22/10 00:02:05  lecteur arrêté depuis 44786 s -> relance
+22/10 00:02:05  relance de chat_daemon.py
+22/10 00:04:05  lecteur arrêté depuis 44906 s -> relance
+22/10 00:04:05  relance de chat_daemon.py

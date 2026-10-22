@@ -1,0 +1,6 @@
+# Test d'autonomie
+
+Ce fichier sert à vérifier que le système fonctionne correctement.
+
+- Vérifiez que le texte est bien affiché.
+- Si tout est OK, le test est réussi.

@@ -1,0 +1,27 @@
+feedparser>=6.0,<7
+requests>=2.31,<3
+python-dotenv>=1.0,<2
+ddgs>=9
+tzdata>=2024.1
+# Module OSINT (facultatif, installé seulement par install_osint.bat après accord de JOSY)
+python-wappalyzer>=0.3.1
+sherlock-project>=0.14.0
+beautifulsoup4>=4.12.0
+
+# Interface locale, Copilote et analyses (22/10/2026)
+bcrypt
+playwright
+beautifulsoup4
+yfinance
+pypdf
+pdfplumber
+python-docx
+openpyxl
+pandas
+duckdb
+icalendar
+black
+pylint
+moviepy
+rembg[cpu]==2.0.85
+Pillow

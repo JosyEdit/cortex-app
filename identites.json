@@ -1,0 +1,7 @@
+{
+  "_note": "Rôles reconnus par le Cortex (décision de JOSY du 21/10/2026). Toute autre adresse = extérieur (prospect ou inconnu). Un email n'est reconnu comme venant du fondateur que si son authentification (DKIM/DMARC) est valide : une adresse d'expéditeur seule se falsifie facilement.",
+  "roles": {
+    "mrjosyvalery@gmail.com": "fondateur",
+    "contact@josyei.com": "admin_entreprise"
+  }
+}

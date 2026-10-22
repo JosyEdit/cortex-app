@@ -1,0 +1,162 @@
+<!-- JOSY EI · Page de vente · à coller dans un bloc « HTML personnalisé » de WordPress -->
+<!-- Réservation : bouton mailto vers contact@josyei.com, objet « Demande de diagnostic » (détecté par le Cortex). -->
+<style>
+/* Mise en page : une colonne de lecture, un bandeau prix, une grille de secteurs, un rapport type en « fiche de contrôle » */
+.jei{--ink:#152238;--paper:#f5f7fa;--card:#ffffff;--line:#d9e0ea;--muted:#56637a;--ok:#0d7a5f;--okbg:#e5f4ee;--warn:#9a5b00;--warnbg:#fdf1dc;
+--display:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;--body:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;--mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;padding:0 16px}
+.jei *{box-sizing:border-box}
+.jei .w{max-width:1040px;margin:0 auto;padding-block:56px;display:grid;gap:72px}
+.jei h1,.jei h2,.jei h3{font-family:var(--display);color:var(--ink);text-wrap:balance;margin:0;font-weight:600;letter-spacing:-.01em}
+.jei h1{font-size:clamp(2rem,5vw,3.25rem);line-height:1.1}
+.jei h2{font-size:clamp(1.5rem,3vw,2rem);line-height:1.2}
+.jei h3{font-size:1.15rem;line-height:1.3}
+.jei p{margin:0;max-width:65ch}
+.jei .eyebrow{font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;font-weight:600;color:var(--ok)}
+.jei .lead{font-size:1.15rem;color:var(--muted)}
+.jei .stack{display:grid;gap:16px;align-content:start}
+.jei .hero{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:center}
+.jei .btn{display:inline-block;background:var(--ink);color:#fff!important;text-decoration:none!important;font-weight:600;padding:14px 26px;border-radius:6px;font-size:1rem}
+.jei .btn:hover{background:var(--ok)}
+.jei .btn:focus-visible{outline:3px solid var(--ok);outline-offset:3px}
+.jei .meta{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:.92rem;color:var(--muted)}
+.jei .meta b{color:var(--ink)}
+.jei .sheet{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:24px;display:grid;gap:14px;box-shadow:0 10px 30px -18px rgba(21,34,56,.35)}
+.jei .sheet .hd{display:flex;justify-content:space-between;gap:12px;font-family:var(--mono);font-size:.78rem;color:var(--muted);border-bottom:1px dashed var(--line);padding-bottom:10px}
+.jei .row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;font-size:.95rem}
+.jei .tag{font-family:var(--mono);font-size:.72rem;font-weight:600;padding:3px 8px;border-radius:4px;white-space:nowrap}
+.jei .tag.ok{background:var(--okbg);color:var(--ok)}
+.jei .tag.warn{background:var(--warnbg);color:var(--warn)}
+.jei .sheet .ft{font-size:.8rem;color:var(--muted)}
+.jei .two{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.jei ul.check{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.jei ul.check li{padding-left:28px;position:relative;max-width:60ch}
+.jei ul.check li::before{content:"";position:absolute;left:0;top:.45em;width:14px;height:14px;border-radius:3px;border:2px solid var(--ok)}
+.jei ol.get{margin:0;padding-left:1.3em;display:grid;gap:12px}
+.jei ol.get li::marker{font-family:var(--display);font-weight:600;color:var(--ok)}
+.jei .price{background:var(--ink);color:#fff;border-radius:10px;padding:36px;display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:center}
+.jei .price .num{font-family:var(--display);font-size:clamp(2.6rem,6vw,3.6rem);line-height:1;font-variant-numeric:tabular-nums}
+.jei .price .num small{font-size:.35em;font-family:var(--body);opacity:.75;margin-left:6px}
+.jei .price p{color:#d5dcea}
+.jei .price .btn{background:#fff;color:var(--ink)!important}
+.jei .price .btn:hover{background:var(--okbg)}
+.jei .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:s}
+.jei .step{border-top:3px solid var(--ink);padding-top:16px;display:grid;gap:8px;align-content:start}
+.jei .step span{font-family:var(--mono);font-size:.8rem;color:var(--muted)}
+.jei .sectors{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.jei .sector{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:20px;display:grid;gap:8px;align-content:start}
+.jei .sector p{font-size:.95rem;color:var(--muted)}
+.jei .faq{display:grid;gap:0;border-top:1px solid var(--line)}
+.jei details{border-bottom:1px solid var(--line);padding:16px 0}
+.jei summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.jei summary::-webkit-details-marker{display:none}
+.jei summary::after{content:"+";font-family:var(--mono);color:var(--ok)}
+.jei details[open] summary::after{content:"–"}
+.jei details p{margin-top:10px;color:var(--muted)}
+.jei .end{text-align:center;display:grid;gap:16px;justify-items:center}
+.jei .foot{border-top:1px solid var(--line);padding-top:24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:.85rem;color:var(--muted)}
+.jei .foot a{color:var(--muted)}
+.jei .mail{font-family:var(--mono);user-select:all;color:var(--ink)}
+@media (max-width:820px){.jei .hero,.jei .two{grid-template-columns:1fr;gap:32px}.jei .price{grid-template-columns:1fr;gap:16px;padding:28px}.jei .steps{grid-template-columns:1fr}.jei .w{gap:56px;padding-block:40px}}
+@media (prefers-reduced-motion:reduce){.jei *{transition:none!important}}
+</style>
+
+<div class="jei">
+<div class="w">
+
+<section class="hero">
+  <div class="stack">
+    <p class="eyebrow">TPE et PME de 6 à 49 salariés · partout en France</p>
+    <h1>Votre entreprise est-elle prête pour l'IA, le RGPD et une panne informatique&nbsp;?</h1>
+    <p class="lead">Un diagnostic IA, RGPD et sauvegardes en une demi-journée, à prix fixe, avec un rapport écrit et 3 actions prioritaires. Sans engagement.</p>
+    <div><a class="btn" href="mailto:contact@josyei.com?subject=Demande%20de%20diagnostic&amp;body=Bonjour%2C%0A%0AJe%20souhaite%20r%C3%A9server%20un%20diagnostic%20IA%2C%20RGPD%20et%20sauvegardes.%0A%0A1.%20Nom%20du%20cabinet%20ou%20de%20l'entreprise%20et%20activit%C3%A9%20%3A%0A2.%20Nombre%20de%20personnes%20%3A%0A3.%20Outils%20d'IA%20utilis%C3%A9s%20aujourd'hui%20%3A%0A4.%20Comment%20sont%20faites%20vos%20sauvegardes%20%3A%0A5.%20Ce%20que%20vous%20attendez%20en%20priorit%C3%A9%20%3A%0A%0ADeux%20cr%C3%A9neaux%20qui%20me%20conviennent%20%3A" >Réserver mon créneau</a></div>
+    <div class="meta"><span><b>490 € HT</b> prix fixe</span><span><b>½ journée</b> à distance</span><span><b>Rapport écrit</b> sans jargon</span></div>
+  </div>
+  <div class="sheet" aria-label="Exemple d'extrait de rapport">
+    <div class="hd"><span>RAPPORT TYPE · EXTRAIT</span><span>exemple</span></div>
+    <div class="row"><span>Sauvegardes : règle 3-2-1 respectée</span><span class="tag warn">À CORRIGER</span></div>
+    <div class="row"><span>Restauration testée ces 12 derniers mois</span><span class="tag warn">NON TESTÉE</span></div>
+    <div class="row"><span>Usage de l'IA encadré par une règle écrite</span><span class="tag warn">ABSENT</span></div>
+    <div class="row"><span>Registre des traitements (RGPD, art. 30)</span><span class="tag ok">PRÉSENT</span></div>
+    <div class="row"><span>Double authentification sur la messagerie</span><span class="tag ok">ACTIVÉE</span></div>
+    <div class="ft">Chaque point est expliqué simplement, avec ce que vous pouvez faire vous-même.</div>
+  </div>
+</section>
+
+<section class="two">
+  <div class="stack">
+    <h2>Pour qui&nbsp;?</h2>
+    <p>Les entreprises de 6 à 49 salariés, quel que soit leur secteur, qui se reconnaissent dans au moins un de ces cas.</p>
+  </div>
+  <ul class="check">
+    <li>Vos équipes utilisent déjà ChatGPT ou d'autres outils d'IA, sans règle claire sur les données qu'on peut y mettre.</li>
+    <li>Vous ne savez pas si vos sauvegardes fonctionneraient vraiment après une panne ou un rançongiciel.</li>
+    <li>Vous voulez être en règle avec le RGPD sans y passer des semaines.</li>
+  </ul>
+</section>
+
+<section class="two">
+  <div class="stack">
+    <h2>Ce que vous recevez</h2>
+    <p>Un diagnostic concret, pensé pour être lu par un dirigeant, pas par un informaticien.</p>
+  </div>
+  <ol class="get">
+    <li><b>Un état des lieux</b> de vos outils, de vos sauvegardes et de vos usages de l'IA.</li>
+    <li><b>Un rapport écrit</b> de quelques pages, sans jargon.</li>
+    <li><b>3 actions prioritaires</b> classées par urgence, avec ce que vous pouvez faire seul.</li>
+    <li><b>Un échange de restitution</b> pour répondre à vos questions.</li>
+  </ol>
+</section>
+
+<section class="price">
+  <div class="num">490 €<small>HT</small></div>
+  <p>Prix fixe, annoncé à l'avance, sans devis surprise. Un forfait mensuel de veille et de maintenance peut être proposé ensuite. Il n'est jamais imposé.</p>
+  <a class="btn" href="mailto:contact@josyei.com?subject=Demande%20de%20diagnostic&amp;body=Bonjour%2C%0A%0AJe%20souhaite%20r%C3%A9server%20un%20diagnostic%20IA%2C%20RGPD%20et%20sauvegardes.%0A%0A1.%20Nom%20du%20cabinet%20ou%20de%20l'entreprise%20et%20activit%C3%A9%20%3A%0A2.%20Nombre%20de%20personnes%20%3A%0A3.%20Outils%20d'IA%20utilis%C3%A9s%20aujourd'hui%20%3A%0A4.%20Comment%20sont%20faites%20vos%20sauvegardes%20%3A%0A5.%20Ce%20que%20vous%20attendez%20en%20priorit%C3%A9%20%3A%0A%0ADeux%20cr%C3%A9neaux%20qui%20me%20conviennent%20%3A" >Réserver</a>
+</section>
+
+<section class="stack" style="gap:28px">
+  <h2>Comment ça se passe</h2>
+  <div class="steps">
+    <div class="step"><span>ÉTAPE 1</span><h3>Vous réservez en ligne</h3><p>Vous choisissez un créneau et répondez à 5 questions courtes sur votre entreprise.</p></div>
+    <div class="step"><span>ÉTAPE 2</span><h3>Le diagnostic, à distance</h3><p>Un échange de 20 minutes pour cadrer, puis une demi-journée d'analyse de vos outils et sauvegardes.</p></div>
+    <div class="step"><span>ÉTAPE 3</span><h3>Vous recevez le rapport</h3><p>Un rapport écrit avec vos 3 actions prioritaires, et un échange pour en parler.</p></div>
+  </div>
+</section>
+
+<section class="stack" style="gap:28px">
+  <h2>Exemples selon votre activité</h2>
+  <div class="sectors">
+    <div class="sector"><h3>Bâtiment et artisans</h3><p>Devis, plans et photos de chantier dispersés sur des téléphones, sans sauvegarde commune.</p></div>
+    <div class="sector"><h3>Commerce et e-commerce</h3><p>Fichiers clients, newsletters et paiements en ligne à mettre en règle avec le RGPD.</p></div>
+    <div class="sector"><h3>Industrie et logistique</h3><p>Un poste ou un serveur à l'arrêt, et c'est la production qui s'arrête.</p></div>
+    <div class="sector"><h3>Cabinets comptables, notaires, avocats</h3><p>Secret professionnel et usage de l'IA sur des données clients.</p></div>
+    <div class="sector"><h3>Immobilier et assurance</h3><p>Pièces d'identité et justificatifs stockés et partagés chaque jour.</p></div>
+    <div class="sector"><h3>Santé et services à la personne</h3><p>Des données de santé qui demandent une protection renforcée.</p></div>
+    <div class="sector"><h3>Hôtellerie et restauration</h3><p>Réservations, avis en ligne et données clients à sécuriser.</p></div>
+  </div>
+</section>
+
+<section class="two">
+  <div class="stack"><h2>Questions fréquentes</h2></div>
+  <div class="faq">
+    <details><summary>Faut-il que je sois présent toute la demi-journée&nbsp;?</summary><p>Non. Après l'échange de 20 minutes, il suffit d'une personne joignable pour donner quelques accès ou répondre à des questions ponctuelles.</p></details>
+    <details><summary>Est-ce que vous accédez à nos données clients&nbsp;?</summary><p>Le diagnostic porte sur vos outils et vos réglages, pas sur le contenu de vos fichiers. Rien n'est copié ni conservé.</p></details>
+    <details><summary>Que se passe-t-il après le rapport&nbsp;?</summary><p>Vous pouvez appliquer les actions vous-même. Si vous le souhaitez, un accompagnement ou un forfait mensuel peut être proposé, sans obligation.</p></details>
+    <details><summary>Intervenez-vous sur place&nbsp;?</summary><p>Le diagnostic se fait à distance, partout en France. Un déplacement peut être étudié selon la zone.</p></details>
+  </div>
+</section>
+
+<section class="end">
+  <h2>Faites le point en une demi-journée</h2>
+  <p class="lead">490 € HT, un rapport clair et 3 actions pour avancer.</p>
+  <a class="btn" href="mailto:contact@josyei.com?subject=Demande%20de%20diagnostic&amp;body=Bonjour%2C%0A%0AJe%20souhaite%20r%C3%A9server%20un%20diagnostic%20IA%2C%20RGPD%20et%20sauvegardes.%0A%0A1.%20Nom%20du%20cabinet%20ou%20de%20l'entreprise%20et%20activit%C3%A9%20%3A%0A2.%20Nombre%20de%20personnes%20%3A%0A3.%20Outils%20d'IA%20utilis%C3%A9s%20aujourd'hui%20%3A%0A4.%20Comment%20sont%20faites%20vos%20sauvegardes%20%3A%0A5.%20Ce%20que%20vous%20attendez%20en%20priorit%C3%A9%20%3A%0A%0ADeux%20cr%C3%A9neaux%20qui%20me%20conviennent%20%3A" >Réserver mon créneau</a>
+  <p>Une question avant de réserver&nbsp;? Écrivez à <span class="mail">contact@josyei.com</span></p>
+</section>
+
+<footer class="foot">
+  <span>JOSY EI, entrepreneur individuel · SIREN 914 113 543</span>
+  <a href="/mentions-legales/">Mentions légales</a>
+</footer>
+
+</div>
+</div>

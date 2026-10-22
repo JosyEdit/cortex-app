@@ -1,0 +1,9 @@
+﻿C:\Users\JOSY EI\cortex\AGENTS.md:19: planning, à tes missions ni à tes rapports : c'est toi qui t'adaptes.
+C:\Users\JOSY EI\cortex\AGENTS.md:177: (routine, pauses, « au cas où ») : un plan court et vrai vaut mieux qu'un plan
+C:\Users\JOSY EI\cortex\app.py:8: - « Ma vie »       : le profil de vie et ce qui manque encore ;
+C:\Users\JOSY EI\cortex\app.py:177: onglets = [("jour", "Aujourd'hui", "/"), ("vie", "Ma vie", "/vie"),
+C:\Users\JOSY EI\cortex\app.py:270: h = ["<h1>Ma vie</h1>",
+C:\Users\JOSY EI\cortex\app.py:302: return page("Ma vie", "".join(h), "vie", token, message)
+C:\Users\JOSY EI\cortex\cortex.py:166: BOOKING_URL = os.environ.get("BOOKING_URL", "").strip()  # lien d'agenda facultatif
+C:\Users\JOSY EI\cortex\fondateur.py:60: "pour placer la première tâche après ton réveil réel"),
+C:\Users\JOSY EI\cortex\fondateur.py:440: "(routine, pauses, « au cas où »).",
