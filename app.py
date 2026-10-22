@@ -3561,3 +3561,7 @@ if __name__ == "__main__":
 @app.route('/test-live')
 def test_live():
     return '<h1 style="color:green;">Le Cortex est en ligne sur Render !</h1>'
+
+@app.route('/')
+def home():
+    return '<h1>Le Cortex est enfin en ligne sur Render !</h1>'
