@@ -3555,6 +3555,3 @@ def main():
 if __name__ == "__main__":
     sys.exit(main())
 
-@app.route("/github")
-def github_route():
-    return "GitHub route"
