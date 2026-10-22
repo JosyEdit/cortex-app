@@ -1,7 +1,4 @@
-﻿from flask import Flask
-app = Flask(__name__)
-
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """Cortex â€” interface locale (navigateur, 127.0.0.1 uniquement).
 
 Ce que c'est : une fenÃªtre sur le Cortex, pas un deuxiÃ¨me Cortex. Elle rÃ©utilise
@@ -3562,8 +3559,3 @@ if __name__ == "__main__":
 def github_route():
     return "GitHub route"
 
-@app.route('/login')
-def login_page(): return 'Page de Login officielle'
-
-@app.route('/')
-def home(): return 'Accueil Cortex officiel'
