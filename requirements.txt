@@ -1,12 +1,8 @@
-flask
+﻿flask
 groq
 python-dotenv
 requests
 gunicorn
 bcrypt
 feedparser
-beautifulsoup4
-python-telegram-bot
-duckdb
-openpyxl
-pillow
+connexion
