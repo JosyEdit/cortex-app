@@ -6,9 +6,3 @@ gunicorn
 bcrypt
 feedparser
 beautifulsoup4
-pandas
-openpyxl
-pillow
-duckdb
-icalendar
-reportlab
