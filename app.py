@@ -1,3 +1,5 @@
+from flask import Flask
+app = Flask(__name__)
 #!/usr/bin/env python3
 """Cortex — interface locale (navigateur, 127.0.0.1 uniquement).
 
