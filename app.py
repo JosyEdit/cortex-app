@@ -1,6 +1,4 @@
-﻿from flask import Flask
-app = Flask(__name__)
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """Cortex â€” interface locale (navigateur, 127.0.0.1 uniquement).
 
 Ce que c'est : une fenÃªtre sur le Cortex, pas un deuxiÃ¨me Cortex. Elle rÃ©utilise
@@ -1678,7 +1676,7 @@ def bloc_memoire():
             "mots de passe, numÃ©ros bancaires ni donnÃ©es de santÃ©).</p></details>")
 
 
-AVATARS = Path(r"C:\Users\JOSY EI\Cortex-Workspace") / "avatars"  # photos de profil, une par compte
+AVATARS = Path(r".-Workspace") / "avatars"  # photos de profil, une par compte
 
 
 def bloc_infos_compte(token, email, role):
@@ -2597,7 +2595,7 @@ def vue_discuter(store, token, message=None):
     return page("Copilote", corps, "discuter", token, message)
 
 
-WORKSPACE_COPILOTE = Path(r"C:\Users\JOSY EI\Cortex-Workspace")  # mÃªme dossier qu'executeur_taches
+WORKSPACE_COPILOTE = Path(r".-Workspace")  # mÃªme dossier qu'executeur_taches
 
 
 def galerie_html(token, n=16):
@@ -3557,7 +3555,4 @@ def main():
 if __name__ == "__main__":
     sys.exit(main())
 
-@app.route("/github")
-def github_route():
-    return "GitHub route"
 
