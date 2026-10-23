@@ -2643,15 +2643,21 @@ def vue_journal(store, token, message=None):
 # Serveur HTTP
 # --------------------------------------------------------------------------
 def hote_autorise(hote):
-    """Ce PC (127.0.0.1, localhost) ou son nom Tailscale (*.ts.net, réseau privé de JOSY, en HTTPS
-    via « tailscale serve »). Le serveur n'écoute que sur 127.0.0.1 : seul le relais Tailscale de ce
-    PC peut lui transmettre ces requêtes, et le jeton reste exigé."""
+    """Autorise les hôtes locaux, Tailscale et les noms publics configurés."""
     hote = (hote or "").lower().rstrip(".")
     import socket
     if hote in ("127.0.0.1", "localhost", socket.gethostname().lower()) or hote.endswith(".ts.net"):
         return True  # nom court MagicDNS du PC compris (« desktop-xxxx »)
-    import os  # hébergement (Render…) : noms publics ajoutés explicitement, ex. CORTEX_HOTES=cortex.onrender.com
-    if hote in {h.strip().lower() for h in os.environ.get("CORTEX_HOTES", "").split(",") if h.strip()}:
+    import os
+    hotes_configures = {
+        nom.strip().lower().rstrip(".")
+        for nom in os.environ.get("CORTEX_HOTES", "").split(",")
+        if nom.strip()
+    }
+    hote_render = os.environ.get("RENDER_EXTERNAL_HOSTNAME", "").strip().lower().rstrip(".")
+    if hote_render:
+        hotes_configures.add(hote_render)
+    if hote in hotes_configures:
         return True
     import ipaddress  # adresse Tailscale (100.64.0.0/10) tapée directement, via le même relais
     try:
@@ -3489,10 +3495,11 @@ def preparer_serveur(port_prefere, essais=6, hote="127.0.0.1"):
 def main():
     import os
     ap = argparse.ArgumentParser(description="Interface locale du Cortex (127.0.0.1).")
-    # Hébergeur (Render…) : il impose PORT et demande d'écouter sur 0.0.0.0 (HOST=0.0.0.0).
-    # Sur ce PC, sans variable, on reste sur 127.0.0.1 : seul le relais Tailscale atteint l'interface.
-    ap.add_argument("--port", type=int, default=int(os.environ.get("PORT", 8765)))
-    ap.add_argument("--host", default=os.environ.get("HOST", "127.0.0.1"))
+    # Render impose PORT et exige une écoute publique sur 0.0.0.0.
+    port_env = os.environ.get("PORT")
+    hote_defaut = "0.0.0.0" if port_env else os.environ.get("HOST", "127.0.0.1")
+    ap.add_argument("--port", type=int, default=int(port_env or 8765))
+    ap.add_argument("--host", default=hote_defaut)
     ap.add_argument("--db", default=C.DB_PATH, help="base SQLite (défaut : celle du Cortex)")
     ap.add_argument("--token-fichier", default=str(BASE_DIR / ".app-token"))
     ap.add_argument("--ouvrir", action="store_true",
@@ -3518,7 +3525,8 @@ def main():
         s.db.close()
     except Exception as exc:
         journaliser(f"fiabilite.preparer : {exc!r}", visible=True)
-    serveur, port, note = preparer_serveur(args.port, hote=args.host)
+    essais = 1 if port_env else 6
+    serveur, port, note = preparer_serveur(args.port, essais=essais, hote=args.host)
     adresse = f"http://127.0.0.1:{port or args.port}/?t={jeton_local}"
     if note == "deja_en_service":
         print(f"   L'interface tourne déjà sur le port {port} : je rouvre la page.")
