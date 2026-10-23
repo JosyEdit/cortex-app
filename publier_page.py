@@ -1,5 +1,5 @@
 """Publie (ou met à jour) les pages de josyei.com via l'API REST WordPress :
-l'accueil, /mentions-legales et /politique-de-confidentialite (/diagnostic renvoie vers l'accueil).
+l'accueil, le contact, /mentions-legales et /politique-de-confidentialite (/diagnostic renvoie vers l'accueil).
 Identifiants : WP_URL, WP_USER, WP_APP_PASSWORD dans .env (mot de passe d'application)."""
 
 import os
@@ -17,24 +17,23 @@ AUTH = (os.environ.get("WP_USER", "Mrjosyvalery"), os.environ["WP_APP_PASSWORD"]
 
 MENTIONS = """<div class="jei"><div class="w"><section class="stack">
 
-<p><b>Éditeur du site</b> : JOSY EI, entrepreneur individuel. SIREN 914 113 543. TVA intracommunautaire FR00914113543. Siège : 86500 Montmorillon, France. Contact : contact@josyei.com.</p>
-<p><b>Directeur de la publication</b> : l'entrepreneur individuel exploitant JOSY EI.</p>
+<p><b>Éditeur du site</b> : JOSY EI, entrepreneur individuel. SIREN 914 113 543. TVA intracommunautaire FR00914113543.</p>
+<p><b>Directeur de la publication</b> : le représentant de JOSY EI.</p>
 <p><b>Hébergeur</b> : Hostinger International Ltd, 61 Lordou Vironos Street, 6023 Larnaca, Chypre.</p>
 <p><b>Propriété intellectuelle</b> : les textes et éléments graphiques de ce site sont la propriété de JOSY EI, sauf mention contraire. Toute reproduction sans autorisation est interdite.</p>
 <p><b>Données personnelles</b> : voir la <a href="/politique-de-confidentialite/">politique de confidentialité</a>.</p>
-<p>Découvrez notre <a href="/">présentation du Cortex</a>.</p>
+<p>Pour toute demande, utilisez le <a href="/contact/">formulaire de contact</a>.</p>
 </section></div></div>"""
 
 CONFIDENTIALITE = """<div class="jei"><div class="w"><section class="stack">
 
-<p><b>Responsable du traitement</b> : JOSY EI, SIREN 914 113 543, contact@josyei.com.</p>
-<p><b>Données collectées</b> : celles que vous nous envoyez par email (nom, prénom, email professionnel, téléphone, site web, objectif de votre demande), ainsi que les informations professionnelles publiques sur votre entreprise (annuaire officiel des entreprises, site internet, résultats de recherche).</p>
-<p><b>Finalités et bases légales</b> : répondre à votre demande et préparer notre offre (mesures précontractuelles à votre demande) ; prospection commerciale par email auprès de professionnels, sur des sujets liés à leur activité (intérêt légitime, article 6.1.f du RGPD).</p>
+<p><b>Responsable du traitement</b> : JOSY EI, SIREN 914 113 543.</p>
+<p><b>Données collectées</b> : les informations que vous choisissez de transmettre via le formulaire du site et les informations professionnelles publiques relatives à votre entreprise.</p>
+<p><b>Finalités et bases légales</b> : répondre à votre demande et préparer une éventuelle prestation (mesures précontractuelles à votre demande) ; améliorer les services du site.</p>
 <p><b>Durée de conservation</b> : 3 ans à compter du dernier échange, puis suppression. Les adresses des personnes qui s'opposent à la prospection sont conservées sous forme chiffrée, uniquement pour ne plus les contacter.</p>
-<p><b>Destinataires</b> : JOSY EI uniquement. Les emails transitent par notre hébergeur de messagerie (Hostinger). Certains textes peuvent être traités par un service d'intelligence artificielle pour préparer une réponse ; aucune donnée n'est vendue ni cédée.</p>
-<p><b>Météo et heure de la page d'accueil</b> : si, et seulement si, vous acceptez la géolocalisation proposée par votre navigateur, votre position approximative (coordonnées arrondies à 2 décimales) est envoyée par votre navigateur à Open-Meteo (température) et à OpenStreetMap Nominatim (nom de la ville). JOSY EI ne reçoit ni ne conserve cette position : aucun cookie, aucun stockage. Sans votre accord, aucun appel n'est fait et la page affiche « Montmorillon (86) ».</p>
-<p><b>Vos droits</b> : accès, rectification, effacement, opposition, limitation et portabilité. Pour ne plus recevoir de message, répondez STOP à n'importe quel email ou écrivez à contact@josyei.com. Vous pouvez aussi saisir la CNIL (www.cnil.fr).</p>
-<p>Voir aussi les <a href="/mentions-legales/">mentions légales</a> et la <a href="/">présentation du Cortex</a>.</p>
+<p><b>Destinataires</b> : les données sont accessibles aux personnes chargées de traiter votre demande et aux prestataires techniques nécessaires au fonctionnement du site. Aucune donnée n'est vendue.</p>
+<p><b>Vos droits</b> : accès, rectification, effacement, opposition, limitation et portabilité. Pour les exercer, utilisez le <a href="/contact/">formulaire de contact</a>. Vous pouvez aussi saisir la CNIL (www.cnil.fr).</p>
+<p>Voir aussi les <a href="/mentions-legales/">mentions légales</a>.</p>
 </section></div></div>"""
 
 
@@ -87,7 +86,10 @@ def publish(slug, title, html, with_style=True):
 
 def main():
     body = (BASE / "page-accueil.html").read_text(encoding="utf-8")
+    contact = (BASE / "contact.html").read_text(encoding="utf-8")
+
     ok = publish("accueil", "Le Cortex, votre employé IA pour votre présence en ligne", body, with_style=False)
+    ok &= publish("contact", "Réserver un audit gratuit", contact)
     ok &= publish("mentions-legales", "Mentions légales", MENTIONS)
     ok &= publish("politique-de-confidentialite", "Politique de confidentialité", CONFIDENTIALITE)
     ok &= remplacer_diagnostic()

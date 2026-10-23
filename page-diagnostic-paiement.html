@@ -16,15 +16,6 @@
 .jei .svc{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px;font-weight:600;counter-increment:s}
 .jei .svc::before{content:counter(s) ". ";color:var(--ok);font-family:var(--display)}
 .jei .note{font-size:.85rem;color:var(--muted)}
-.jei form.f{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:28px;display:grid;gap:16px;max-width:720px}
-.jei .f .g{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.jei .f label{display:grid;gap:6px;font-size:.92rem;font-weight:600}
-.jei .f input[type=text],.jei .f input[type=email],.jei .f input[type=tel]{font:inherit;padding:11px 12px;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink)}
-.jei .f .choice{display:grid;gap:10px}
-.jei .f .choice label,.jei .f .rgpd{display:flex;gap:10px;align-items:flex-start;font-weight:400}
-.jei .f .rgpd{font-size:.88rem;color:var(--muted)}
-.jei .f button{border:0;cursor:pointer}
-.jei .f .msg{font-size:.9rem;color:var(--ok);min-height:1.2em}
 @media (max-width:980px){.jei .plans{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:820px){.jei .cards,.jei .services{grid-template-columns:1fr}.jei .f .g{grid-template-columns:1fr}.jei .plans{grid-template-columns:1fr}}
 </style>
@@ -78,7 +69,7 @@
     <div class="plan"><h3>Découverte</h3><p class="p">9,99 € <small>HT / mois</small></p><ul><li>1 utilisateur</li><li>Site web + Google Business</li></ul><a class="btn" href="https://app.josyei.com/essai/decouverte">Payer 1,99 € HT et essayer 3 jours</a></div>
     <div class="plan"><h3>Starter</h3><p class="p">14,99 € <small>HT / mois</small></p><ul><li>3 utilisateurs</li><li>Site, Google et boutique en ligne</li></ul><a class="btn" href="https://app.josyei.com/essai/starter">Payer 1,99 € HT et essayer 3 jours</a></div>
     <div class="plan"><h3>Pro</h3><p class="p">19,99 € <small>HT / mois</small></p><ul><li>10 utilisateurs</li><li>Tout inclus</li></ul><a class="btn" href="https://app.josyei.com/essai/pro">Payer 1,99 € HT et essayer 3 jours</a></div>
-    <div class="plan"><h3>Entreprise</h3><p class="p">Sur devis</p><ul><li>Besoins sur mesure</li></ul><a class="btn" href="mailto:contact@josyei.com?subject=Demande%20JOSY%20EI%20-%20Formule%20Entreprise">Demander un devis</a></div>
+    <div class="plan"><h3>Entreprise</h3><p class="p">Sur devis</p><ul><li>Besoins sur mesure</li></ul><a class="btn" href="/contact/">Demander un devis</a></div>
   </div>
 </section>
 
@@ -96,47 +87,20 @@
     <div class="svc">Formation à l'usage du Cortex</div>
     <div class="svc">Accompagnement mensuel stratégique</div>
   </div>
-  <div><a class="btn" href="#formulaire">Demander un devis personnalisé</a></div>
+  <div><a class="btn" href="/contact/">Réserver mon audit gratuit</a></div>
 </section>
 
 <section class="stack" id="formulaire">
-  <p class="eyebrow">Inscription ou devis</p>
-  <h2>Commencez maintenant</h2>
-  <form class="f" onsubmit="return jeiSend(this)">
-    <div class="g">
-      <label>Prénom<input type="text" name="prenom" required autocomplete="given-name"></label>
-      <label>Nom<input type="text" name="nom" required autocomplete="family-name"></label>
-    </div>
-    <div class="g">
-      <label>Email professionnel<input type="email" name="email" required autocomplete="email"></label>
-      <label>Téléphone<input type="tel" name="tel" autocomplete="tel"></label>
-    </div>
-    <div class="choice" role="radiogroup" aria-label="Votre demande">
-      <label><input type="radio" name="choix" value="essai" required> Je veux tester Le Cortex (1,99 € HT)</label>
-      <label><input type="radio" name="choix" value="devis"> Je veux un service JOSY EI (devis)</label>
-    </div>
-    <label class="rgpd"><input type="checkbox" required> J'accepte que JOSY EI utilise ces informations uniquement pour répondre à ma demande, conformément à la <a href="/politique-de-confidentialite/">politique de confidentialité</a>.</label>
-    <button class="btn" type="submit">Envoyer ma demande</button>
-    <p class="note">Aucun paiement à cette étape : votre demande est envoyée par email à contact@josyei.com et nous vous répondons par écrit.</p>
-    <p class="msg" aria-live="polite"></p>
-  </form>
+  <p class="eyebrow">Audit gratuit</p>
+  <h2>Réservez votre créneau</h2>
+  <p>Choisissez un créneau pour échanger sur votre besoin et préparer votre audit gratuit.</p>
+  <a class="btn" href="/contact/">Réserver mon audit gratuit</a>
 </section>
 
 <footer class="foot">
-  <span>JOSY EI, entrepreneur individuel · Montmorillon (86), France · SIREN 914 113 543 · contact@josyei.com</span>
+  <span>JOSY EI, entrepreneur individuel · France · SIREN 914 113 543</span>
+  <a class="btn" href="/contact/">Réserver mon audit gratuit</a>
   <span><a href="/mentions-legales/">Mentions légales</a> · <a href="/politique-de-confidentialite/">Politique de confidentialité</a></span>
 </footer>
 
 </div></div>
-<script>
-function jeiSend(f){
-  var v=function(n){return (f.elements[n].value||"").trim();};
-  var choix=v("choix")==="essai"?"Essai Le Cortex (1,99 €)":"Devis service JOSY EI";
-  var body="Prénom : "+v("prenom")+"\nNom : "+v("nom")+"\nEmail : "+v("email")+"\nTéléphone : "+v("tel")
-    +"\nDemande : "+choix;
-  window.location.href="mailto:contact@josyei.com?subject="+encodeURIComponent("Demande JOSY EI - "+choix)
-    +"&body="+encodeURIComponent(body);
-  f.querySelector(".msg").textContent="Votre messagerie s'ouvre : il ne reste qu'à envoyer le message.";
-  return false;
-}
-</script>

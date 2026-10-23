@@ -96,7 +96,7 @@
     <div class="svc">Formation à l'usage du Cortex</div>
     <div class="svc">Accompagnement mensuel stratégique</div>
   </div>
-  <div><a class="btn" href="#formulaire">Demander un devis personnalisé</a></div>
+  <div><a class="btn" href="/contact/">Réserver mon audit gratuit</a></div>
 </section>
 
 <section class="stack" id="formulaire">
@@ -117,26 +117,20 @@
     </div>
     <label class="rgpd"><input type="checkbox" required> J'accepte que JOSY EI utilise ces informations uniquement pour répondre à ma demande, conformément à la <a href="/politique-de-confidentialite/">politique de confidentialité</a>.</label>
     <button class="btn" type="submit">Envoyer ma demande</button>
-    <p class="note">Aucun paiement à cette étape : votre demande est envoyée par email à contact@josyei.com et nous vous répondons par écrit.</p>
+    <p class="note">Aucun paiement à cette étape : votre demande est envoyée par email à page de contact et nous vous répondons par écrit.</p>
     <p class="msg" aria-live="polite"></p>
   </form>
 </section>
 
 <footer class="foot">
-  <span>JOSY EI, entrepreneur individuel · Montmorillon (86), France · SIREN 914 113 543 · contact@josyei.com</span>
+  <span>JOSY EI, entrepreneur individuel · France · SIREN 914 113 543 · page de contact</span>
   <span><a href="/mentions-legales/">Mentions légales</a> · <a href="/politique-de-confidentialite/">Politique de confidentialité</a></span>
 </footer>
 
 </div></div>
 <script>
 function jeiSend(f){
-  var v=function(n){return (f.elements[n].value||"").trim();};
-  var choix=v("choix")==="essai"?"Essai Le Cortex (1,99 €)":"Devis service JOSY EI";
-  var body="Prénom : "+v("prenom")+"\nNom : "+v("nom")+"\nEmail : "+v("email")+"\nTéléphone : "+v("tel")
-    +"\nDemande : "+choix;
-  window.location.href="mailto:contact@josyei.com?subject="+encodeURIComponent("Demande JOSY EI - "+choix)
-    +"&body="+encodeURIComponent(body);
-  f.querySelector(".msg").textContent="Votre messagerie s'ouvre : il ne reste qu'à envoyer le message.";
+  window.location.href="/contact/";
   return false;
 }
 </script>

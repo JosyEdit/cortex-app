@@ -357,7 +357,7 @@ URL_RE = re.compile(r"https?://[^\s<>\"')\]]+", re.IGNORECASE)
 PAGE_MAX_OCTETS = 3_000_000
 PAGE_MAX_CARACTERES = 5000   # au-delà, les petits modèles Groq refusent la requête (trop grande)
 SITE_PAGES = ("page-accueil.html", "page-de-vente.html", "page-diagnostic-corps.html",
-              "page-diagnostic-paiement.html")
+              "page-diagnostic-paiement.html", "contact.html")
 
 
 def _adresse_publique(hote):
