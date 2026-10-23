@@ -1,0 +1,212 @@
+INVENTAIRE DU PC
+Date : 2026-10-23T02:42:32+02:00
+Périmètre : C:\Users\JOSY EI
+Exclusions : dossiers nommés AppData ou Windows ; liens et jonctions.
+Dossiers exclus ou non suivis : 132
+Fichiers inventoriés : 15138
+Taille totale : 1.8 Gio (1,898,263,704 octets)
+
+NOMBRE DE FICHIERS PAR EXTENSION
+--------------------------------
+(sans extension)              3,022
+.1792654525571                    1
+.1792670938621                    1
+.1792672492137                    1
+.1792683641564                    1
+.1792696792675                    1
+.active                           6
+.apache                           3
+.backup                           2
+.bak                             27
+.bak-20261021-140934              1
+.bak-20261021-160432              3
+.bak-20261021-162704              1
+.bak-20261021-225504              5
+.bak-20261021-234703              3
+.bak-20261022-004345              4
+.bak-20261022-021201              3
+.bak-hostinger                    1
+.bash                             1
+.bat                             35
+.bin                              4
+.blf                              1
+.bnf                              1
+.bsd                              3
+.build                            3
+.c                                7
+.cc                               2
+.cfg                              2
+.cjs                             22
+.cmd                              1
+.cpp                              1
+.cs                               9
+.csc                              8
+.csh                              1
+.css                              4
+.csv                             46
+.cts                             14
+.ctypes                           1
+.dat                              1
+.db                              48
+.db-shm                           8
+.db-wal                           8
+.def                              4
+.dll                            167
+.docx                             1
+.emf                              4
+.eml                             33
+.enc                             80
+.eps                              2
+.err                             10
+.example                          9
+.exe                             25
+.f                               24
+.f90                             61
+.f95                              1
+.fish                             2
+.fits                             1
+.fs                               8
+.fsc                              6
+.gif                             36
+.gypi                             1
+.gz                               5
+.h                              324
+.history                          1
+.hold                             1
+.html                           164
+.ico                              4
+.ics                              1
+.idx                              3
+.igpi                             3
+.inc                              1
+.ini                             18
+.ipynb                            1
+.jfif                            15
+.jpeg                             4
+.jpg                            143
+.js                           1,349
+.json                           574
+.jsonl                           25
+.lib                            105
+.lnk                              3
+.lock                            19
+.lock-journal                     1
+.log                             41
+.log1                             1
+.log2                             1
+.map                            294
+.markdown                         2
+.mask                             1
+.md                             688
+.mjs                             32
+.mp4                              2
+.msg                            145
+.mts                             11
+.ninja                            1
+.nmake                            1
+.node                             4
+.npy                              5
+.npz                              2
+.onnx                             1
+.p7s                              2
+.pack                             3
+.pc                               1
+.pdb                              3
+.pdf                             13
+.pem                              2
+.pkl                              1
+.png                             49
+.ppm                              1
+.pptx                             1
+.ps1                             31
+.ps1xml                           4
+.psd1                            17
+.psm1                             4
+.pub                              1
+.pxd                             23
+.pxi                             26
+.py                           4,647
+.pyc                            649
+.pyd                            110
+.pyf                              7
+.pyi                            312
+.python                           1
+.pyw                              1
+.pyx                              6
+.regtrans-ms                      2
+.rels                             2
+.rev                              3
+.rng                              1
+.rst                              5
+.sample                          42
+.search-ms                        2
+.searchconnector-ms               1
+.secret                           1
+.serper                           3
+.service                          4
+.sh                              11
+.stamp                            1
+.svg                              7
+.tab                              4
+.tcl                            252
+.template                         1
+.terms                            2
+.timer                            4
+.tm                               5
+.toml                             2
+.tpl                              8
+.ts                             689
+.txt                            132
+.typed                           20
+.url                              2
+.vc                               2
+.vscdb                            1
+.webp                            56
+.whl                              1
+.winmd                            2
+.xbm                             50
+.xml                             28
+.xpm                             24
+.xsl                              7
+.yaml                             4
+.yml                             39
+.zi                               1
+.zip                              3
+.zsh                              1
+.zstd                            10
+
+TAILLE PAR GRAND DOSSIER
+------------------------
+(fichiers à la racine)                       34.8 Mio (36,498,532 octets)
+.aider                                        2.9 Mio (3,051,242 octets)
+.alphacode                                    5.4 Mio (5,707,492 octets)
+.bun                                         13.7 Mio (14,357,970 octets)
+.cache                                        8.7 Mio (9,084,530 octets)
+.claude                                      91.5 Mio (95,981,938 octets)
+.cline                                        2.0 Mio (2,135,181 octets)
+.copilot                                      5.5 Mio (5,779,926 octets)
+.dsh                                        278.8 Mio (292,358,465 octets)
+.rembg                                      167.8 Mio (175,997,641 octets)
+.vscode                                     301.4 Mio (316,013,107 octets)
+.vscode-shared                               24.0 Kio (24,576 octets)
+3D Objects                                    298.0 o (298 octets)
+Contacts                                      412.0 o (412 octets)
+cortex                                      156.5 Mio (164,100,431 octets)
+cortex-app                                  135.6 Mio (142,144,403 octets)
+Cortex-V3                                     2.8 Mio (2,973,132 octets)
+Cortex-Workspace                              5.9 Mio (6,208,266 octets)
+Desktop                                      14.5 Mio (15,216,088 octets)
+Documents                                    27.9 Mio (29,206,856 octets)
+Downloads                                   452.7 Mio (474,707,777 octets)
+Favorites                                     690.0 o (690 octets)
+IntelGraphicsProfiles                        24.7 Kio (25,308 octets)
+Links                                         1.9 Kio (1,969 octets)
+Music                                         504.0 o (504 octets)
+OneDrive                                       98.0 o (98 octets)
+Pictures                                     22.3 Mio (23,374,700 octets)
+Sauvegardes                                  79.5 Mio (83,309,507 octets)
+Saved Games                                   282.0 o (282 octets)
+Searches                                      1.8 Kio (1,879 octets)
+Videos                                        504.0 o (504 octets)
+
+Erreurs de lecture : 0
