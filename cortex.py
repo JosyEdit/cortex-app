@@ -43,6 +43,7 @@ BASE_DIR = Path(__file__).resolve().parent
 
 try:  # en local, les secrets viennent du fichier .env à côté du script
     from dotenv import load_dotenv
+    load_dotenv(BASE_DIR / ".env.local")
     load_dotenv(BASE_DIR / ".env")
     load_dotenv(BASE_DIR / ".env.serper")  # clé Serper.dev, hors du dépôt
 except ImportError:
@@ -347,11 +348,269 @@ CREATE TABLE IF NOT EXISTS journal (
 """
 
 
+def _qmark_to_format(sql):
+    """Convert SQLite qmark placeholders without touching quoted SQL text."""
+    result = []
+    quote = None
+    index = 0
+    while index < len(sql):
+        char = sql[index]
+        if quote:
+            result.append("%%" if char == "%" else char)
+            if char == quote:
+                if index + 1 < len(sql) and sql[index + 1] == quote:
+                    result.append(sql[index + 1])
+                    index += 1
+                else:
+                    quote = None
+        elif char in ("'", '"'):
+            quote = char
+            result.append(char)
+        elif sql.startswith("--", index):
+            end = sql.find("\n", index)
+            if end < 0:
+                end = len(sql)
+            result.append(sql[index:end].replace("%", "%%"))
+            index = end - 1
+        elif sql.startswith("/*", index):
+            end = sql.find("*/", index + 2)
+            if end < 0:
+                end = len(sql) - 2
+            result.append(sql[index:end + 2].replace("%", "%%"))
+            index = end + 1
+        elif char == "?":
+            result.append("%s")
+        else:
+            result.append("%%" if char == "%" else char)
+        index += 1
+    return "".join(result)
+
+
+class _PostgresCursor:
+    def __init__(self, cursor, returning_id=False):
+        self._cursor = cursor
+        self._returning_id = returning_id
+        self._returning_row = None
+        self._lastrowid_read = False
+
+    @property
+    def lastrowid(self):
+        if not self._returning_id:
+            return None
+        if not self._lastrowid_read:
+            self._returning_row = self._cursor.fetchone()
+            self._lastrowid_read = True
+        return self._returning_row[0] if self._returning_row else None
+
+    def fetchone(self):
+        if self._returning_row is not None:
+            row, self._returning_row = self._returning_row, None
+            return row
+        return self._cursor.fetchone()
+
+    def __iter__(self):
+        if self._returning_row is not None:
+            row, self._returning_row = self._returning_row, None
+            yield row
+        yield from self._cursor
+
+    def __getattr__(self, name):
+        return getattr(self._cursor, name)
+
+
+class _PostgresConnection:
+    """Adaptateur de compatibilité SQL pour les requêtes historiques du Store."""
+
+    def __init__(self, connection):
+        self._connection = connection
+
+    @property
+    def is_postgres(self):
+        return True
+
+    @staticmethod
+    def _translate(sql):
+        statement = sql.strip().rstrip(";").strip()
+
+        pragma = re.fullmatch(r"PRAGMA\s+table_info\(([^)]+)\)", statement, re.I)
+        if pragma:
+            table = pragma.group(1).strip().strip("'\"`[]")
+            if not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", table):
+                raise ValueError("Nom de table invalide dans PRAGMA table_info")
+            return (
+                "SELECT ordinal_position - 1 AS cid, column_name AS name, data_type AS type "
+                "FROM information_schema.columns WHERE table_schema = current_schema() "
+                "AND table_name = %s ORDER BY ordinal_position",
+                (table,),
+                False,
+            )
+        if re.fullmatch(r"PRAGMA\s+database_list", statement, re.I):
+            return "SELECT 0, 'main', current_database()", None, False
+        if re.fullmatch(r"PRAGMA\s+foreign_keys\s*=\s*ON", statement, re.I):
+            return "SELECT 1", None, False
+        if re.fullmatch(r"PRAGMA\s+journal_mode\s*=\s*WAL", statement, re.I):
+            return "SELECT 'wal'", None, False
+        if re.fullmatch(r"BEGIN\s+IMMEDIATE", statement, re.I):
+            return "BEGIN", None, False
+
+        if re.search(r"\bsqlite_master\b", statement, re.I):
+            if re.search(r"\bsql\b", statement, re.I):
+                raise ValueError("La définition SQLite des tables n'existe pas dans PostgreSQL")
+            statement = re.sub(r"\bsqlite_master\b", "information_schema.tables", statement, flags=re.I)
+            statement = re.sub(r"\bname\b", "table_name", statement, flags=re.I)
+            statement = re.sub(r"\btype\s*=\s*'table'", "table_type = 'BASE TABLE'", statement, flags=re.I)
+            statement = re.sub(r"\btype\b", "table_type", statement, flags=re.I)
+            if re.search(r"\bWHERE\b", statement, re.I):
+                statement = re.sub(
+                    r"\bWHERE\b",
+                    "WHERE table_schema = current_schema() AND",
+                    statement,
+                    count=1,
+                    flags=re.I,
+                )
+            else:
+                statement = re.sub(
+                    r"\bORDER\s+BY\b",
+                    "WHERE table_schema = current_schema() ORDER BY",
+                    statement,
+                    count=1,
+                    flags=re.I,
+                )
+
+        statement = re.sub(
+            r"\bdatetime\(\s*'now'\s*,\s*\?\s*\)",
+            "TO_CHAR(CURRENT_TIMESTAMP + ?::interval, 'YYYY-MM-DD HH24:MI:SS')",
+            statement,
+            flags=re.I,
+        )
+        statement = re.sub(
+            r"\bINTEGER\s+PRIMARY\s+KEY\s+AUTOINCREMENT\b",
+            "BIGSERIAL PRIMARY KEY",
+            statement,
+            flags=re.I,
+        )
+        statement = re.sub(
+            r"\bdatetime\(\s*'now'\s*\)",
+            "TO_CHAR(CURRENT_TIMESTAMP, 'YYYY-MM-DD HH24:MI:SS')",
+            statement,
+            flags=re.I,
+        )
+
+        ignore_conflicts = bool(re.match(r"INSERT\s+OR\s+IGNORE\s+INTO\b", statement, re.I))
+        if ignore_conflicts:
+            statement = re.sub(
+                r"^INSERT\s+OR\s+IGNORE\s+INTO\b", "INSERT INTO", statement, flags=re.I
+            )
+            statement += " ON CONFLICT DO NOTHING"
+
+        statement = _qmark_to_format(statement)
+        return statement, None, ignore_conflicts
+
+    @staticmethod
+    def _returning_id(sql):
+        return bool(re.match(r"\s*INSERT\s+INTO\s+ameliorations\s*\(", sql, re.I)
+                    and not re.search(r"\bRETURNING\b", sql, re.I))
+
+    def execute(self, sql, parameters=None):
+        translated, forced_parameters, _ = self._translate(sql)
+        params = forced_parameters if forced_parameters is not None else parameters
+        returning_id = self._returning_id(translated)
+        if returning_id:
+            translated += " RETURNING id"
+        cursor = self._connection.cursor()
+        cursor.execute(translated, params) if params is not None else cursor.execute(translated)
+        return _PostgresCursor(cursor, returning_id=returning_id)
+
+    def executemany(self, sql, parameters):
+        translated, forced_parameters, _ = self._translate(sql)
+        if forced_parameters is not None:
+            raise ValueError("executemany ne prend pas en charge les PRAGMA")
+        cursor = self._connection.cursor()
+        cursor.executemany(translated, parameters)
+        return _PostgresCursor(cursor)
+
+    def executescript(self, script):
+        for statement in script.split(";"):
+            if statement.strip():
+                self.execute(statement)
+        return self
+
+    @property
+    def in_transaction(self):
+        from psycopg2.extensions import TRANSACTION_STATUS_IDLE
+        return self._connection.get_transaction_status() != TRANSACTION_STATUS_IDLE
+
+    def commit(self):
+        self._connection.commit()
+
+    def rollback(self):
+        self._connection.rollback()
+
+    def close(self):
+        self._connection.close()
+
+    def schema_for_table(self, table):
+        if not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", table):
+            raise ValueError("Nom de table invalide")
+        cursor = self._connection.cursor()
+        cursor.execute(
+            "SELECT column_name, data_type, is_nullable FROM information_schema.columns "
+            "WHERE table_schema = current_schema() AND table_name = %s ORDER BY ordinal_position",
+            (table,),
+        )
+        columns = cursor.fetchall()
+        if not columns:
+            raise ValueError(f"Table PostgreSQL introuvable : {table}")
+        cursor.execute(
+            "SELECT kcu.column_name FROM information_schema.table_constraints tc "
+            "JOIN information_schema.key_column_usage kcu "
+            "ON tc.constraint_name = kcu.constraint_name AND tc.table_schema = kcu.table_schema "
+            "AND tc.table_name = kcu.table_name "
+            "WHERE tc.table_schema = current_schema() AND tc.table_name = %s "
+            "AND tc.constraint_type = 'PRIMARY KEY' ORDER BY kcu.ordinal_position",
+            (table,),
+        )
+        primary_key = [row[0] for row in cursor.fetchall()]
+        sqlite_types = {
+            "bigint": "INTEGER",
+            "boolean": "INTEGER",
+            "bytea": "BLOB",
+            "date": "TEXT",
+            "double precision": "REAL",
+            "integer": "INTEGER",
+            "json": "TEXT",
+            "jsonb": "TEXT",
+            "numeric": "NUMERIC",
+            "real": "REAL",
+            "smallint": "INTEGER",
+            "text": "TEXT",
+            "time without time zone": "TEXT",
+            "timestamp without time zone": "TEXT",
+            "timestamp with time zone": "TEXT",
+            "character varying": "TEXT",
+            "character": "TEXT",
+        }
+        definitions = []
+        for name, data_type, nullable in columns:
+            column_type = sqlite_types.get(data_type, "TEXT")
+            not_null = " NOT NULL" if nullable == "NO" and name not in primary_key else ""
+            definitions.append(f'"{name}" {column_type}{not_null}')
+        if primary_key:
+            definitions.append("PRIMARY KEY (" + ", ".join(f'"{name}"' for name in primary_key) + ")")
+        return f'CREATE TABLE "{table}" ({", ".join(definitions)})'
+
+
 class Store:
     def __init__(self, path):
-        self.db = sqlite3.connect(path, timeout=30)  # base partagée avec chat_daemon.py
-        self.db.execute("PRAGMA journal_mode=WAL;")
-        self.db.row_factory = sqlite3.Row
+        import connexion
+
+        connection, backend = connexion.connecter_base(path)
+        if backend == "postgres":
+            pg_connection = connection
+            self.db = _PostgresConnection(pg_connection)
+        else:
+            self.db = connection
+            self.db.execute("PRAGMA journal_mode=WAL;")
         self.db.executescript(SCHEMA)
         self.db.commit()
 
@@ -409,8 +668,10 @@ def ecrire_journal(db, power, event, action_id=None, details=None, utilisateur_i
     with _JOURNAL_LOCK:
         if db.in_transaction:  # écritures en cours sur cette connexion : log() les validait déjà
             db.commit()
-        db.execute("BEGIN IMMEDIATE")  # verrou d'écriture : un seul écrivain lit puis insère
+        db.execute("BEGIN IMMEDIATE")
         try:
+            if getattr(db, "is_postgres", False):
+                db.execute("SELECT pg_advisory_xact_lock(?)", (0x435254584A4E4C,))
             ts = iso(now())
             row = db.execute("SELECT hash FROM journal ORDER BY id DESC LIMIT 1").fetchone()
             prev = row[0] if row else "GENESIS"
@@ -1543,9 +1804,13 @@ class Cortex:
         self.s.db.commit()
         for cand in [r for r in todo if r["email"].lower() not in recent][:AUDITS_PER_RUN]:
             a = audit.audit_prospect(cand)
-            self.s.db.execute("INSERT OR REPLACE INTO audits VALUES(?,?,?,?)",
-                              (cand["email"].lower(), iso(now()), len(a["manques"]),
-                               json.dumps(a, ensure_ascii=False)))
+            self.s.db.execute(
+                "INSERT INTO audits(email, date, manques, analyse) VALUES(?,?,?,?) "
+                "ON CONFLICT(email) DO UPDATE SET date=excluded.date, manques=excluded.manques, "
+                "analyse=excluded.analyse",
+                (cand["email"].lower(), iso(now()), len(a["manques"]),
+                 json.dumps(a, ensure_ascii=False)),
+            )
             self.s.db.commit()
             self.s.log("EXECUTIF", "prospect_analyse", details={"manques": len(a["manques"]),
                                                                "services": a["services"]})

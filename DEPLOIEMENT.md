@@ -28,9 +28,17 @@
 
 Ensuite, l'adresse sera `https://<nom>.onrender.com/?t=<jeton>`. Le jeton est créé au premier démarrage dans `.app-token`. Le mieux est de le fixer toi-même : un fichier secret Render nommé `.app-token`.
 
+## Base PostgreSQL Neon
+
+- Si `DATABASE_URL` est défini, `cortex.py` utilise PostgreSQL via `psycopg2`; sans cette variable, le mode local reste sur SQLite (`cortex.db`).
+- `psycopg2-binary` est déclaré dans `requirements-serveur.txt`, utilisé par la commande de build Render ci-dessus, et dans `requirements.txt`.
+- En local, `DATABASE_URL` peut être chargé depuis `.env.local` (ou `.env`). Ces fichiers sont ignorés par Git. Sur Render, configure `DATABASE_URL` dans les variables d'environnement du service; le fichier local créé par `neon env pull` n'est pas transmis automatiquement à Render.
+- Les tables applicatives sont créées au démarrage, mais le contenu existant de `cortex.db` n'est pas migré vers Neon automatiquement. Les données existantes doivent être exportées/importées séparément avant de basculer la production.
+- La sauvegarde SQLite intégrée à l'interface n'est pas disponible en mode PostgreSQL; utiliser les sauvegardes du fournisseur PostgreSQL.
+
 ## Limites à connaître (offre gratuite)
 
-- **Disque éphémère** : `cortex.db`, les sessions et le Workspace sont effacés à chaque redéploiement ou redémarrage. Il faut soit un disque persistant (offre payante, environ 7 $/mois), soit une base externe (PostgreSQL), ce qui demande une migration du code SQLite.
+- **Disque éphémère** : les sessions et le Workspace sont effacés à chaque redéploiement ou redémarrage. Une base PostgreSQL Neon conserve les données applicatives, mais pas les fichiers du Workspace.
 - **Mise en veille** après 15 min sans visite : le premier accès prend environ 1 minute.
 - **512 Mo de mémoire** : pas de détourage d'image (rembg), pas de vidéo, pas de lecture de sites par navigateur (Playwright).
 - **Chemins Windows** : le Workspace (`C:\Users\JOSY EI\Cortex-Workspace`) devient un simple dossier relatif sous Linux ; à remplacer par une variable (`CORTEX_WORKSPACE`) avant un vrai déploiement.

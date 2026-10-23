@@ -89,7 +89,8 @@ def preparer(store):
     if cle in _pret:
         return
     store.db.executescript(SCHEMA)
-    store.db.executemany("INSERT OR REPLACE INTO plans(plan, fonction, valeur) VALUES(?,?,?)",
+    store.db.executemany("INSERT INTO plans(plan, fonction, valeur) VALUES(?,?,?) "
+                         "ON CONFLICT(plan, fonction) DO UPDATE SET valeur=excluded.valeur",
                          [(p, f, v) for p, fs in PLANS.items() for f, v in fs.items()])
     cols = {r[1] for r in store.db.execute("PRAGMA table_info(utilisateurs)")}
     if "plan" not in cols:

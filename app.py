@@ -1950,6 +1950,9 @@ def derniere_sauvegarde():
 
 def sauvegarder_base(store):
     """Copie cohérente de cortex.db (API de sauvegarde SQLite, base en service) avec horodatage."""
+    if os.environ.get("DATABASE_URL", "").strip():
+        return ("La base active est PostgreSQL : utilisez les sauvegardes PostgreSQL configurées "
+                "dans le fournisseur d'hébergement.")
     import sqlite3
     dossier = BASE_DIR / "sauvegardes" / f"base-{datetime.now().strftime('%Y%m%d-%H%M%S')}"
     dossier.mkdir(parents=True, exist_ok=True)

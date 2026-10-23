@@ -6,3 +6,4 @@ gunicorn
 bcrypt
 feedparser
 connexion
+psycopg2-binary

@@ -87,7 +87,11 @@ def faits(store):
 # ---------------------------------------------------------------- 3. de travail
 def travail_definir(store, mission, cle, valeur):
     setup(store)
-    store.db.execute("INSERT OR REPLACE INTO memoire_travail VALUES(?,?,?)", (mission, cle, str(valeur)[:500]))
+    store.db.execute(
+        "INSERT INTO memoire_travail(mission, cle, valeur) VALUES(?,?,?) "
+        "ON CONFLICT(mission, cle) DO UPDATE SET valeur=excluded.valeur",
+        (mission, cle, str(valeur)[:500]),
+    )
     store.db.commit()
 
 
@@ -127,8 +131,10 @@ def exporter(store, chemin):
     for t in tables:
         cur = db.execute(f"SELECT * FROM {t}")
         cols = [d[0] for d in cur.description]
+        schema = db.schema_for_table(t) if hasattr(db, "schema_for_table") else \
+            db.execute("SELECT sql FROM sqlite_master WHERE name=?", (t,)).fetchone()[0]
         out["tables"][t] = {"colonnes": cols, "lignes": [list(r) for r in cur.fetchall()],
-                            "schema": db.execute("SELECT sql FROM sqlite_master WHERE name=?", (t,)).fetchone()[0]}
+                            "schema": schema}
     Path(chemin).write_text(json.dumps(out, ensure_ascii=False), encoding="utf-8")
     return {t: len(v["lignes"]) for t, v in out["tables"].items()}
 

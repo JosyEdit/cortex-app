@@ -6,7 +6,9 @@ cookie HttpOnly + SameSite=Strict (+ Secure derrière HTTPS / Tailscale), 12 h a
 Tentatives limitées : 5 échecs en 15 minutes bloquent la connexion 15 minutes.
 """
 
+import os
 import secrets
+import sqlite3
 import threading
 import time
 
@@ -23,6 +25,22 @@ MDP_MIN = 12
 _sessions = {}   # jeton -> (email, role, expire_a)
 _echecs = []     # horodatages des échecs récents
 _verrou = threading.Lock()
+
+
+def connecter_base(path):
+    """Ouvre PostgreSQL si DATABASE_URL est défini, sinon SQLite local."""
+    database_url = os.environ.get("DATABASE_URL", "").strip()
+    if database_url:
+        import psycopg2
+        from psycopg2.extras import DictCursor
+
+        if database_url.startswith("postgres://"):
+            database_url = "postgresql://" + database_url[len("postgres://"):]
+        return psycopg2.connect(database_url, cursor_factory=DictCursor), "postgres"
+
+    db = sqlite3.connect(path, timeout=30)
+    db.row_factory = sqlite3.Row
+    return db, "sqlite"
 
 
 def preparer(store):

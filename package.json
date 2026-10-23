@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "build": "python -m compileall -q app.py cortex.py audit.py chat_daemon.py fiabilite.py memoire_avancee.py connexion.py comptes.py"
+  },
+  "dependencies": {
+    "@neon/config": "^1.9.3",
+    "@neon/env": "^1.6.4"
+  }
+}

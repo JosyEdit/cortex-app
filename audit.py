@@ -310,8 +310,12 @@ def places_key():
 
 
 def _cache_db():
-    import sqlite3
-    db = sqlite3.connect(Path(__file__).resolve().parent / "cortex.db", timeout=30)
+    if os.environ.get("DATABASE_URL", "").strip():
+        import cortex
+        db = cortex.Store(cortex.DB_PATH).db
+    else:
+        import sqlite3
+        db = sqlite3.connect(Path(__file__).resolve().parent / "cortex.db", timeout=30)
     db.execute("CREATE TABLE IF NOT EXISTS serper_cache (query TEXT PRIMARY KEY, date TEXT, resultats TEXT)")
     db.execute("DELETE FROM serper_cache WHERE date<?",
                (date.fromordinal(date.today().toordinal() - CACHE_DAYS).isoformat(),))
@@ -359,7 +363,8 @@ def serper_search(query):
         res = [{"id": str(p.get("cid") or ""), "nom": p.get("title", ""), "note": p.get("rating"),
                 "avis": int(p.get("ratingCount") or 0), "adresse": p.get("address", ""),
                 "site": p.get("website", ""), "categorie": p.get("category", "")} for p in places]
-        db.execute("INSERT OR REPLACE INTO serper_cache VALUES(?,?,?)",
+        db.execute("INSERT INTO serper_cache(query, date, resultats) VALUES(?,?,?) "
+                   "ON CONFLICT(query) DO UPDATE SET date=excluded.date, resultats=excluded.resultats",
                    (query, date.today().isoformat(), json.dumps(res, ensure_ascii=False)))
         db.commit()
         return res

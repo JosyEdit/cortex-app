@@ -25,7 +25,6 @@ Usage :
 
 import ctypes
 import os
-import sqlite3
 import sys
 import threading
 import time
@@ -77,13 +76,16 @@ def _toucher():
 
 def age_battement():
     """Âge du battement en secondes, ou None s'il n'y en a jamais eu."""
+    store = None
     try:
-        connexion = sqlite3.connect(cortex.DB_PATH, timeout=10)
-        ligne = connexion.execute(
+        store = cortex.Store(cortex.DB_PATH)
+        ligne = store.db.execute(
             "SELECT value FROM kv WHERE key='chat_daemon_heartbeat'").fetchone()
-        connexion.close()
-    except sqlite3.Error:
+    except Exception:
         return None
+    finally:
+        if store is not None:
+            store.db.close()
     if not ligne or not ligne[0]:
         return None
     try:
@@ -133,16 +135,16 @@ def main():
     def battement():
         """Battement indépendant : il continue même pendant une réponse lente."""
         try:
-            connexion = sqlite3.connect(cortex.DB_PATH, timeout=10)
-        except sqlite3.Error:
+            heartbeat_store = cortex.Store(cortex.DB_PATH)
+        except Exception:
             return
         while True:
             try:
-                connexion.execute(
+                heartbeat_store.db.execute(
                     "INSERT INTO kv(key, value) VALUES('chat_daemon_heartbeat', ?) "
                     "ON CONFLICT(key) DO UPDATE SET value=excluded.value",
                     (cortex.iso(cortex.now()),))
-                connexion.commit()
+                heartbeat_store.db.commit()
                 _toucher()
             except Exception:
                 pass
