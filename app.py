@@ -21,7 +21,7 @@ Sécurité (trois verrous, parce qu'un port local reste joignable par une page w
 
   1. écoute sur 127.0.0.1 seulement — jamais 0.0.0.0, donc rien sur le réseau ;
   2. en-tête Host vérifié (127.0.0.1 / localhost) — bloque le rebinding DNS ;
-  3. jeton secret dans l'URL, lu ou créé dans `.app-token` (ignoré par git).
+  3. jeton d'accès fourni par la variable d'environnement `CORTEX_TOKEN`.
 
 Aucun message n'est envoyé sur Telegram par cette interface : ce qu'elle fait est
 écrit dans la console et dans le journal local (I1).
@@ -30,8 +30,8 @@ Aucun message n'est envoyé sur Telegram par cette interface : ce qu'elle fait e
 import argparse
 import html
 import json
+import os
 import re
-import secrets
 import sys
 import threading
 import time
@@ -3417,16 +3417,9 @@ class Handler(BaseHTTPRequestHandler):
                        "application/json; charset=utf-8")
 
 
-def jeton(chemin):
-    """Jeton local : stable entre deux lancements, jamais dans git."""
-    fichier = Path(chemin)
-    if fichier.exists():
-        valeur = fichier.read_text(encoding="utf-8").strip()
-        if len(valeur) >= 16:
-            return valeur
-    valeur = secrets.token_urlsafe(24)
-    fichier.write_text(valeur, encoding="utf-8")
-    return valeur
+def jeton():
+    """Renvoie le jeton configuré pour l'application."""
+    return os.environ.get("CORTEX_TOKEN", "").strip() or "b3qasYXEkmBqHtuK3p_XgpcTe-wsuUhE"
 
 
 def ouvrir_navigateur(adresse):
@@ -3501,7 +3494,6 @@ def main():
     ap.add_argument("--port", type=int, default=int(port_env or 8765))
     ap.add_argument("--host", default=hote_defaut)
     ap.add_argument("--db", default=C.DB_PATH, help="base SQLite (défaut : celle du Cortex)")
-    ap.add_argument("--token-fichier", default=str(BASE_DIR / ".app-token"))
     ap.add_argument("--ouvrir", action="store_true",
                     help="ouvre le navigateur dès que l'interface est prête")
     args = ap.parse_args()
@@ -3512,13 +3504,7 @@ def main():
     except (AttributeError, OSError):
         pass
     print("🧠 Interface locale du Cortex")
-    try:
-        jeton_local = jeton(args.token_fichier)
-    except OSError as exc:
-        print(f"   Impossible d'écrire le jeton : {exc}")
-        print(f"   Vérifie que tu peux écrire dans {BASE_DIR}.")
-        journaliser(f"echec jeton : {exc}", visible=True)
-        return 1
+    jeton_local = jeton()
     try:  # tables idempotence/plans et colonne utilisateurs.plan
         s = C.Store(C.DB_PATH)
         fiabilite.preparer(s)
