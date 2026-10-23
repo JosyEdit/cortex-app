@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Cortex — interface locale et hébergée (Render).
+"""Cortex — interface locale (navigateur, 127.0.0.1 uniquement).
 
 Ce que c'est : une fenêtre sur le Cortex, pas un deuxième Cortex. Elle réutilise
 `fondateur.py` et `cortex.py` pour agir — aucune logique n'est dupliquée :
@@ -19,8 +19,8 @@ Comment lancer :
 
 Sécurité (trois verrous, parce qu'un port local reste joignable par une page web) :
 
-  1. écoute sur 127.0.0.1 en local, sur l'hôte configuré en production ;
-  2. en-tête Host vérifié — bloque le rebinding DNS ;
+  1. écoute sur 127.0.0.1 seulement — jamais 0.0.0.0, donc rien sur le réseau ;
+  2. en-tête Host vérifié (127.0.0.1 / localhost) — bloque le rebinding DNS ;
   3. jeton secret dans l'URL, lu ou créé dans `.app-token` (ignoré par git).
 
 Aucun message n'est envoyé sur Telegram par cette interface : ce qu'elle fait est
@@ -1676,7 +1676,7 @@ def bloc_memoire():
             "mots de passe, numéros bancaires ni données de santé).</p></details>")
 
 
-AVATARS = BASE_DIR / "Cortex-Workspace" / "avatars"
+AVATARS = Path(r"C:\Users\JOSY EI\Cortex-Workspace") / "avatars"  # photos de profil, une par compte
 
 
 def bloc_infos_compte(token, email, role):
@@ -2595,7 +2595,7 @@ def vue_discuter(store, token, message=None):
     return page("Copilote", corps, "discuter", token, message)
 
 
-WORKSPACE_COPILOTE = BASE_DIR / "Cortex-Workspace"
+WORKSPACE_COPILOTE = Path(r"C:\Users\JOSY EI\Cortex-Workspace")  # même dossier qu'executeur_taches
 
 
 def galerie_html(token, n=16):
@@ -2643,21 +2643,15 @@ def vue_journal(store, token, message=None):
 # Serveur HTTP
 # --------------------------------------------------------------------------
 def hote_autorise(hote):
-    """Autorise les hôtes locaux, Tailscale et les noms explicitement configurés."""
+    """Ce PC (127.0.0.1, localhost) ou son nom Tailscale (*.ts.net, réseau privé de JOSY, en HTTPS
+    via « tailscale serve »). Le serveur n'écoute que sur 127.0.0.1 : seul le relais Tailscale de ce
+    PC peut lui transmettre ces requêtes, et le jeton reste exigé."""
     hote = (hote or "").lower().rstrip(".")
     import socket
     if hote in ("127.0.0.1", "localhost", socket.gethostname().lower()) or hote.endswith(".ts.net"):
         return True  # nom court MagicDNS du PC compris (« desktop-xxxx »)
-    import os
-    hotes_configures = {
-        h.strip().lower().rstrip(".")
-        for h in os.environ.get("CORTEX_HOTES", "").split(",")
-        if h.strip()
-    }
-    hote_render = os.environ.get("RENDER_EXTERNAL_HOSTNAME", "").strip().lower().rstrip(".")
-    if hote_render:
-        hotes_configures.add(hote_render)
-    if hote in hotes_configures:
+    import os  # hébergement (Render…) : noms publics ajoutés explicitement, ex. CORTEX_HOTES=cortex.onrender.com
+    if hote in {h.strip().lower() for h in os.environ.get("CORTEX_HOTES", "").split(",") if h.strip()}:
         return True
     import ipaddress  # adresse Tailscale (100.64.0.0/10) tapée directement, via le même relais
     try:
@@ -3495,11 +3489,10 @@ def preparer_serveur(port_prefere, essais=6, hote="127.0.0.1"):
 def main():
     import os
     ap = argparse.ArgumentParser(description="Interface locale du Cortex (127.0.0.1).")
-    # En production, PORT est fourni par l'hébergeur ; en local, on reste sur localhost.
-    port_env = os.environ.get("PORT")
-    hote_defaut = "0.0.0.0" if port_env else "127.0.0.1"
-    ap.add_argument("--port", type=int, default=int(port_env or 8765))
-    ap.add_argument("--host", default=os.environ.get("HOST", hote_defaut))
+    # Hébergeur (Render…) : il impose PORT et demande d'écouter sur 0.0.0.0 (HOST=0.0.0.0).
+    # Sur ce PC, sans variable, on reste sur 127.0.0.1 : seul le relais Tailscale atteint l'interface.
+    ap.add_argument("--port", type=int, default=int(os.environ.get("PORT", 8765)))
+    ap.add_argument("--host", default=os.environ.get("HOST", "127.0.0.1"))
     ap.add_argument("--db", default=C.DB_PATH, help="base SQLite (défaut : celle du Cortex)")
     ap.add_argument("--token-fichier", default=str(BASE_DIR / ".app-token"))
     ap.add_argument("--ouvrir", action="store_true",
@@ -3561,3 +3554,7 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
+
+@app.route("/github")
+def github_route():
+    return "GitHub route"
